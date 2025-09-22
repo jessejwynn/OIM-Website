@@ -278,6 +278,18 @@ body {
       #what-we-do-card {
         width: calc(100% - 40px);
       }
+
+      .portrait-container {
+        width: 150px;
+        height: 220px;
+        bottom: -110px;
+      }
+
+      .import-header {
+        padding-bottom: 150px;
+        flex-direction: column;
+        gap: 80px;
+      }
     }
     /* Our Imports Section */
     #our-imports {
@@ -355,11 +367,100 @@ body {
       font-weight: 600;
     }
 
+    .import-header {
+      display: flex;
+      justify-content: space-between;
+      background-color: #5B5F6D;
+      padding: 30px 40px;
+      padding-bottom: 200px;
+      margin: 40px 0;
+      /* border-radius: 10px; */
+      color: white;
+      position: relative;
+    }
+
+    .header-item {
+      text-align: center;
+      flex: 1;
+      position: relative;
+    }
+
+    .portrait-container {
+      width: 280px;
+      height: 350px;
+      position: absolute;
+      left: 50%;
+      bottom: -380px;
+      transform: translateX(-50%);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .portrait-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.3s ease;
+    }
+
+    .portrait-image:hover {
+      transform: scale(1.05);
+    }
+
+    .header-item h3 {
+      font-family: 'Lucida Sans Unicode', sans-serif;
+      font-size: 1.3rem;
+      font-weight: normal;
+      margin: 0;
+      color: white;
+    }
+
+    .catalog-button {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+      padding: 5px 15px;
+      /* border-radius: 20px; */
+      margin-top: 10px;
+      font-family: 'Lucida Sans Unicode', sans-serif;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .catalog-button:hover {
+      background: white;
+      color: #5B5F6D;
+    }
+
+    .header-image-wrapper {
+      position: absolute;
+      height: 150px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 768px) {
+      .import-header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .header-item {
+        text-align: center;
+      }
+    }
+
     footer {
       text-align: center;
       font-size: 0.85rem;
       padding: 20px;
       color: #4E3A02;
     }
+
+
+    
 
     
