@@ -1,0 +1,77 @@
+body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fbf8f2;
+      color: #333;
+    }
+    header {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      z-index: 2;
+    }
+    header a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+    }
+    .hero {
+      position: relative;
+      height: 70vh;
+      background: url(../images/Hero-temp.jpg) center/cover no-repeat;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px;
+      /* margin: 10vh; */
+      border-radius: 50px;
+      overflow: hidden;
+      max-width: 1200px;   /* keeps it centered */
+      margin: 40px auto;  
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+    .hero p.tagline {
+      font-size: 1.5rem;
+      margin: 5px 0 0 0;
+    }
+    .hero p.description {
+      max-width: 400px;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    section {
+      padding: 60px 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      padding: 20px;
+      color: #555;
+    }
