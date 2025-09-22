@@ -1,23 +1,46 @@
 body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #fbf8f2;
+      background-color: #f9ebd1;
       color: #333;
     }
     header {
       position: absolute;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 40px;
+      padding: 30px 0;
       z-index: 2;
+      width: 90%;
+      margin: 0 auto;
+      max-width: 1200px;
     }
+    .logo img {
+      height: 100px;
+      filter: brightness(0) invert(1);
+      transition: transform 0.3s ease;
+    }
+    .logo img:hover {
+      transform: scale(1.05);
+    }
+    nav {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+    
     header a {
-      margin: 0 15px;
       text-decoration: none;
       color: white;
       font-weight: 500;
+      transition: opacity 0.3s ease;
+    }
+    
+    header a:hover {
+      opacity: 0.8;
     }
     .hero {
       position: relative;
@@ -45,8 +68,33 @@ body {
       }
       
       header {
-        padding: 20px;
+        padding: 20px 5%;
+        width: 90%;
       }
+
+      nav {
+        gap: 20px;
+      }
+
+      .hero-content > div:first-child {
+        margin-left: 5%;
+        margin-top: 40%;
+      }
+
+      .hero .description {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        margin: 20px 5%;
+        width: 90%;
+        text-align: left;
+      }
+    }
+
+    .nav-format {
+      font-size: clamp(1rem, 2.5vw, 1.5rem);
+      letter-spacing: 3px;
+
     }
     
     .hero::after {
@@ -62,23 +110,44 @@ body {
       z-index: 1;
       max-width: 1200px;
       width: 90%;
+      height: 100%;
       margin: auto;
       display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+      color: #f9ebd1;
     }
-    .hero h1 {
-      font-size: 3rem;
+    
+    .hero-content > div:first-child {
+      align-self: flex-start;
+      margin-left: 5%;
+    }
+    
+    .hero .description {
+      position: absolute;
+      bottom: 60px;
+      right: 5%;
+      max-width: 400px;
+      text-align: right;
       margin: 0;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    
+    .hero h1 {
+      font-size: 4rem;
+      margin: 0;
+      font-family: Tahoma;
+      font-weight: lighter;
+      letter-spacing: 7px;
     }
     .hero p.tagline {
-      font-size: 1.5rem;
+      font-size: 2rem;
       margin: 5px 0 0 0;
     }
     .hero p.description {
       max-width: 400px;
-      font-size: 1rem;
+      font-size: 1.5rem;
       line-height: 1.6;
     }
     section {
