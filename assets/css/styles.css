@@ -64,7 +64,7 @@ body {
     }
     .logo img {
       height: 100px;
-      /* filter: brightness(0) invert(1); */
+      filter: brightness(0) invert(1);
       transition: transform 0.3s ease;
     }
     .logo img:hover {
@@ -755,8 +755,8 @@ body {
     }
 
     .submit-button {
-      background-color: #4d442b;
-      color: #f9ebd1;
+      background-color: #33365d;
+      color: #f7f0e3;
       border: none;
       padding: 15px 40px;
       font-family: 'Lucida Sans Unicode', sans-serif;
@@ -769,7 +769,7 @@ body {
     }
 
     .submit-button:hover {
-      background-color: #3a2b01;
+      background-color: #333246;
       transform: translateY(-2px);
     }
 
@@ -789,11 +789,85 @@ body {
       }
     }
 
-    footer {
-      text-align: center;
+    .site-footer {
+      background-color: #3E435A;
+      color: white;
+      padding: 60px 40px;
+      margin-top: 80px;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .footer-left {
+      flex: 1;
+    }
+
+    .footer-logo {
+      height: 120px;
+      filter: brightness(0) invert(1);
+      margin-left: 20px;
+    }
+
+    .footer-middle {
+      flex: 2;
+      padding: 0 40px;
+    }
+
+    .footer-middle h4 {
+      font-family: 'Lucida Sans Unicode', sans-serif;
+      font-size: 1.4rem;
+      font-weight: lighter;
+      margin: 0 0 20px 0;
+      color: white;
+    }
+
+    .footer-middle p {
+      margin: 10px 0;
+      font-family: 'Lucida Sans Unicode', sans-serif;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .footer-right {
+      flex: 1;
+      text-align: right;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      height: 100%;
+      align-self: flex-end;
+    }
+
+    .copyright {
       font-size: 0.85rem;
-      padding: 20px;
-      color: #4E3A02;
+      color: rgba(255, 255, 255, 0.6);
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-left, .footer-middle, .footer-right {
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      .footer-middle {
+        padding: 20px 0;
+      }
+
+      .footer-right {
+        justify-content: center;
+      }
     }
 
 
