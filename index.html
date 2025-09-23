@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="stylesheet" href="/assets/css/calendar.css">
     <script src="/assets/js/form-validation.js"></script>
+    <script src="/assets/js/menu.js"></script>
 
 </head>
 
@@ -16,12 +17,29 @@
             <div class="logo">
                 <img src="/assets/images/optima-logo-nodesc.PNG" alt="Optima Logo">
             </div>
-            <nav class="nav-format" style="margin-top: 20px;">
-            <a href="#products">Products</a>
-            <a href="#contact">Contact</a>
-            <a href="#about">About Us</a>
-            <a href="#">En</a>
+            <nav class="nav-format">
+                <a href="#" class="lang-switch">En</a>
+                <a href="#contact">Contact</a>
+                <button class="menu-toggle" aria-label="Menu">
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                </button>
             </nav>
+        </header>
+        <div class="menu-overlay">
+            <div class="menu-content">
+                <div class="menu-items">
+                    <a href="#about">About Us</a>
+                    <div class="menu-group">
+                        <span>Products</span>
+                        <a href="#vebro">Vebro</a>
+                        <a href="#catalogue">Catalogue</a>
+                    </div>
+                    <a href="#locations">Locations</a>
+                </div>
+            </div>
+        </div>
         </header>
         <div class="hero-content">
             <div>
