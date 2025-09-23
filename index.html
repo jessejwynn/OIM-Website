@@ -122,6 +122,52 @@
         </div>
     </section>
 
+    <section id="contact">
+        <h2>CONTACT US</h2>
+        <div class="contact-container">
+            <form action="https://formspree.io/f/your_form_id" method="POST">
+                <div class="form-grid">
+                    <!-- Required Fields -->
+                    <div class="form-group required">
+                        <input type="text" id="name" name="name" required placeholder="Name*">
+                    </div>
+                    <div class="form-group required">
+                        <input type="email" id="email" name="email" required placeholder="Email*">
+                    </div>
+                    <div class="form-group required">
+                        <input type="tel" id="phone" name="phone" required placeholder="Phone Number*">
+                    </div>
+
+                    <!-- Optional Fields -->
+                    <div class="form-group">
+                        <input type="text" id="company" name="company" placeholder="Company Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="company_address" name="company_address" placeholder="Company Address">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="material" name="material" placeholder="Product/Material Type">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="volume" name="volume" placeholder="Estimated Volume">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="timeline" name="timeline" placeholder="Target Timeline">
+                    </div>
+
+                    <!-- Query/Message Field -->
+                    <div class="form-group full-width required">
+                        <textarea id="query" name="query" required placeholder="What can we help you with?*"></textarea>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
     <footer>
         © 2025 Optima. All rights reserved.
     </footer>

@@ -575,6 +575,106 @@ body {
       }
     }
 
+    /* Contact Form Styles */
+    #contact {
+      padding: 80px 40px;
+      background-color: #f9ebd1;
+    }
+
+    #contact h2 {
+      text-align: left;
+      color: #4E3A02;
+      font-family: 'Lucida Sans Unicode', sans-serif;
+      font-size: 2rem;
+      font-weight: normal;
+      margin-bottom: 40px;
+      letter-spacing: 2px;
+    }
+
+    .contact-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .form-group {
+      position: relative;
+    }
+
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .form-group.required input::placeholder,
+    .form-group.required textarea::placeholder {
+      color: #4E3A02;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 5px;
+      font-family: 'Lucida Sans Unicode', sans-serif;
+      color: #4E3A02;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .form-group textarea {
+      height: 150px;
+      resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 0 0 2px #4E3A02;
+    }
+
+    .submit-button {
+      background-color: #4E3A02;
+      color: #f9ebd1;
+      border: none;
+      padding: 15px 40px;
+      font-family: 'Lucida Sans Unicode', sans-serif;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 5px;
+      width: auto;
+      margin: 20px 0;
+    }
+
+    .submit-button:hover {
+      background-color: #3a2b01;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 1200px) {
+      .form-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #contact {
+        padding: 60px 20px;
+      }
+    }
+
     footer {
       text-align: center;
       font-size: 0.85rem;
