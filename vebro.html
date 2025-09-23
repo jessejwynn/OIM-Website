@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vebro - Optima</title>
     <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/calendar.css">
+    <link rel="stylesheet" href="/assets/css/vebro-styles.css">
     <script src="/assets/js/menu.js"></script>
+    <script src="/assets/js/form-validation.js"></script>
 </head>
 <body>
-    <header>
+    <header class="navbar">
         <div class="logo">
             <a href="/">
                 <img src="/assets/images/optima-logo-nodesc.PNG" alt="Optima Logo">
@@ -39,23 +42,41 @@
     </div>
 
     <section class="vebro-hero">
-        <div class="hero-content">
+        <div class="hero-content" id="vebro-hero">
             <h1>VEBRO POLYMERS</h1>
-            <p>Expert Solutions in Industrial Flooring</p>
+            <!-- <h1 style="font-size: clamp(20px, 4vw, 35px); letter-spacing: 2px; margin-top:-50px;">Phthalate-Free PU Concrete Flooring</h1> -->
+            <h2>Healthier. Durable. Ideal for Indonesian industries.</h2>>
         </div>
     </section>
 
-    <section class="vebro-about">
+    <section class="vebro-points" id="vebro-about">
         <h2>ABOUT VEBRO</h2>
         <div class="content-wrapper">
             <div class="glass-card">
-                <p>As the sole distributor of Vebro Polymers in Indonesia, we provide high-performance flooring solutions for industrial, commercial, and hygienic environments.</p>
+                <p>Vebro Polymers is a global manufacturer of high-performance, seamless
+                <strong>PU concrete</strong> and resin flooring systems, now available in
+                <strong>phthalate-free (PF)</strong> formulations for healthier, safer
+                industrial environments. 
+                <!-- As Indonesia’s <strong>sole distributor</strong>,
+                we bring Vebro’s proven performance to food & beverage, pharmaceutical,
+                logistics, and heavy-duty facilities nationwide. -->
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="vebro-points" id="what-is-pu-concrete">
+        <h2>WHAT IS PU CONCRETE?</h2>
+        <div class="content-wrapper">
+            <div class="glass-card">
+                <p>Polyurethane (PU) concrete is a seamless flooring system known for its <strong>extreme durability, chemical resistance</strong>, and<strong> hygienic properties</strong>. It is widely used in food processing plants, pharmaceuticals, and heavy industries.
+                </p>
             </div>
         </div>
     </section>
 
     <section class="vebro-products">
-        <h2>OUR SOLUTIONS</h2>
+        <h2>RPODUCTS</h2>
         <div class="products-grid">
             <!-- Add product categories here -->
         </div>
@@ -64,8 +85,92 @@
     <section id="contact">
         <h2>CONTACT US</h2>
         <div class="contact-container">
-            <!-- Add your contact form here -->
+            <form action="https://formspree.io/f/xkgqnnvq" method="POST">
+                <div class="form-grid">
+                    <!-- Required Fields -->
+                    <div class="form-group required">
+                        <input type="text" id="name" name="name" required placeholder="Name*">
+                    </div>
+                    <div class="form-group required">
+                        <input type="email" id="email" name="email" required placeholder="Email*">
+                    </div>
+                    <div class="form-group required">
+                        <input type="tel" id="phone" name="phone" required placeholder="Phone Number*">
+                    </div>
+
+                    <!-- Optional Fields -->
+                    <div class="form-group">
+                        <input type="text" id="company" name="company" placeholder="Company Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="company_address" name="company_address" placeholder="Company Address">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="material" name="material" placeholder="Product/Material Type">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="volume" name="volume" placeholder="Estimated Volume">
+                    </div>
+                    <div class="form-group">
+                        <div class="date-input-container">
+                            <input type="text" id="timeline" name="timeline" placeholder="Estimated starting time" readonly>
+                            <div class="calendar-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M16 2V6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8 2V6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M3 10H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="custom-calendar" id="calendar">
+                                <div class="calendar-header">
+                                    <button class="prev-month">&lt;</button>
+                                    <div class="current-month">September 2025</div>
+                                    <button class="next-month">&gt;</button>
+                                </div>
+                                <div class="calendar-grid">
+                                    <div class="weekday">SU</div>
+                                    <div class="weekday">MO</div>
+                                    <div class="weekday">TU</div>
+                                    <div class="weekday">WE</div>
+                                    <div class="weekday">TH</div>
+                                    <div class="weekday">FR</div>
+                                    <div class="weekday">SA</div>
+                                </div>
+                                <div class="calendar-days"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Query/Message Field -->
+                    <div class="form-group full-width required">
+                        <textarea id="query" name="query" required placeholder="What can we help you with?*"></textarea>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </section>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="/assets/images/optima-logo-nodesc.PNG" alt="Optima Logo" class="footer-logo">
+            </div>
+            <div class="footer-middle">
+                <h4>Contact Us</h4>
+                <p>Phone: +62 8123123123</p>
+                <p>Email: info@optima.co.id</p>
+            </div>
+            <div class="footer-right">
+                <p class="copyright">© 2025 Optima. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/calendar.js"></script>
 </body>
 </html>
