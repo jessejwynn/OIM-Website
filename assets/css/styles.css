@@ -10,6 +10,10 @@
     }
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -152,6 +156,11 @@ body {
       display: flex;
       flex-direction: column;
       gap: 30px;
+      /* text-align: right; */
+      align-items: flex-end;
+      margin-top: 100px;
+      margin-right: 20px;
+      text-align: right;
     }
 
     .menu-items a {
@@ -165,7 +174,7 @@ body {
     .menu-group {
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 10px;
     }
 
     .menu-group span {
