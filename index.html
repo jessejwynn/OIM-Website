@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Optima</title>
     <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/calendar.css">
 
 </head>
 
@@ -125,7 +126,7 @@
     <section id="contact">
         <h2>CONTACT US</h2>
         <div class="contact-container">
-            <form action="https://formspree.io/f/your_form_id" method="POST">
+            <form action="https://formspree.io/f/xkgqnnvq" method="POST">
                 <div class="form-grid">
                     <!-- Required Fields -->
                     <div class="form-group required">
@@ -152,7 +153,34 @@
                         <input type="text" id="volume" name="volume" placeholder="Estimated Volume">
                     </div>
                     <div class="form-group">
-                        <input type="text" id="timeline" name="timeline" placeholder="Target Timeline">
+                        <div class="date-input-container">
+                            <input type="text" id="timeline" name="timeline" placeholder="Estimated starting time" readonly>
+                            <div class="calendar-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M16 2V6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8 2V6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M3 10H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="custom-calendar" id="calendar">
+                                <div class="calendar-header">
+                                    <button class="prev-month">&lt;</button>
+                                    <div class="current-month">September 2025</div>
+                                    <button class="next-month">&gt;</button>
+                                </div>
+                                <div class="calendar-grid">
+                                    <div class="weekday">SU</div>
+                                    <div class="weekday">MO</div>
+                                    <div class="weekday">TU</div>
+                                    <div class="weekday">WE</div>
+                                    <div class="weekday">TH</div>
+                                    <div class="weekday">FR</div>
+                                    <div class="weekday">SA</div>
+                                </div>
+                                <div class="calendar-days"></div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Query/Message Field -->
@@ -172,7 +200,7 @@
         © 2025 Optima. All rights reserved.
     </footer>
 
+    <script src="/assets/js/calendar.js"></script>
 </body>
-
 
 </html>
