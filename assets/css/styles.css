@@ -177,14 +177,16 @@ body {
       gap: 10px;
     }
 
-    .menu-group span {
+    .menu-group .menu-group-header {
       color: #f9ebd1;
       font-size: 2rem;
       font-family: 'Lucida Sans Unicode', sans-serif;
       margin-bottom: 10px;
+      text-decoration: none;
+      cursor: pointer;
     }
 
-    .menu-group a {
+    .menu-group a:not(.menu-group-header) {
       font-size: 1.5rem;
       margin-left: 20px;
       opacity: 0.8;
