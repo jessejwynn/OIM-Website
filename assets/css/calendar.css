@@ -1,11 +1,13 @@
 .date-input-container {
     position: relative;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .date-input-container input[type="text"] {
-    width: 90%;
+    width: 100%;
     padding: 15px;
+    padding-right: 40px;
     border: none;
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 5px;
@@ -15,6 +17,8 @@
     outline: none;
     transition: all 0.3s ease;
     cursor: pointer;
+    box-sizing: border-box;
+    margin: 0;
 }
 
 .calendar-icon {
