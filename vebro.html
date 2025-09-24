@@ -9,9 +9,11 @@
     <link rel="stylesheet" href="/assets/css/vebro-styles.css">
     <script src="/assets/js/menu.js"></script>
     <script src="/assets/js/form-validation.js"></script>
+    <script src="/assets/js/carousel.js"></script>
+    <script src="/assets/js/floating-nav.js"></script>
 </head>
 <body>
-    <header class="navbar">
+    <div class="floating-navbar">
         <div class="logo">
             <a href="/">
                 <img src="/assets/images/optima-logo-nodesc.PNG" alt="Optima Logo">
@@ -26,6 +28,33 @@
                 <span class="menu-line"></span>
             </button>
         </nav>
+    </div>
+    <header class="navbar vebro-navbar">
+        <div class="nav-carousel">
+            <div class="carousel-slide"></div>
+            <div class="carousel-slide"></div>
+            <div class="carousel-slide"></div>
+        </div>
+        <div class="nav-top">
+            <div class="logo">
+                <a href="/">
+                    <img src="/assets/images/optima-logo-nodesc.PNG" alt="Optima Logo">
+                </a>
+            </div>
+            <nav class="nav-format">
+                <a href="#" class="lang-switch">En</a>
+                <a href="/#contact">Contact</a>
+                <button class="menu-toggle" aria-label="Menu">
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                </button>
+            </nav>
+        </div>
+        <div class="nav-hero">
+            <h1>VEBRO POLYMERS</h1>
+            <h2>Healthier. Durable. Ideal for Indonesian industries.</h2>
+        </div>
     </header>
     <div class="menu-overlay">
         <div class="menu-content">
@@ -40,14 +69,6 @@
             </div>
         </div>
     </div>
-
-    <section class="vebro-hero">
-        <div class="hero-content" id="vebro-hero">
-            <h1>VEBRO POLYMERS</h1>
-            <!-- <h1 style="font-size: clamp(20px, 4vw, 35px); letter-spacing: 2px; margin-top:-50px;">Phthalate-Free PU Concrete Flooring</h1> -->
-            <h2>Healthier. Durable. Ideal for Indonesian industries.</h2>>
-        </div>
-    </section>
 
     <section class="vebro-points" id="vebro-about">
         <h2>ABOUT VEBRO</h2>
@@ -70,6 +91,56 @@
         <div class="content-wrapper">
             <div class="glass-card">
                 <p>Polyurethane (PU) concrete is a seamless flooring system known for its <strong>extreme durability, chemical resistance</strong>, and<strong> hygienic properties</strong>. It is widely used in food processing plants, pharmaceuticals, and heavy industries.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="vebro-points" id="phthalate-free">
+        <h2>Phthalates</h2>
+        <div class="content-wrapper">
+            <div class="glass-card">
+                <h3>What are Phthalates?</h3>
+                <p>
+                    Phthalates are chemicals added to plastics (and some coatings) to increase flexibility, durability, etc.
+                </p>
+                <br>
+                <p>
+                    Some phthalates are known to be endocrine disruptors, possibly linked to asthma, behavioral/neurodevelopmental issues, low IQ, reproductive toxicity, etc.
+                </p>
+                <br>
+                <p>
+                    In many PU/PU concrete or other flooring materials, phthalates may be used; even if cured, people working with wet material or in imperfectly cured floors can be exposed.
+                </p>
+            </div>
+        </div>
+        <div class="content-wrapper">
+            <div class="glass-card">
+                <h3>Vebro is Phthalate-Free</h3>
+                <li>
+                    Same physical performance / durability as earlier
+                </li>
+                <li>
+                    Improved odor control in wet state   
+                </li>
+                <li>
+                    Better shelf life
+                </li>
+                <li>
+                    Easier workability of pigment/colour components
+                </li>
+                <li>
+                    Improved topcoats 
+                </li>
+            </div>
+        </div>
+    </section>
+
+    <section class="vebro-points" id="pu-vs-epoxy">
+        <h2>PU vs Epoxy</h2>
+        <div class="content-wrapper">
+            <div class="glass-card">
+                <p>
                 </p>
             </div>
         </div>

@@ -1,30 +1,133 @@
 /* Vebro page specific styles */
 /* Override or add styles specific to vebro.html here */
 
-/* Example: Different text color for Vebro page */
-.vebro-hero h1 {
-    color: #1f2335;
-    font-family: 'Lucida Sans Unicode', sans-serif; 
+/* Navigation Carousel Styles */
+.vebro-navbar {
     position: relative;
+    overflow: hidden;
+    background: transparent;
+    height: 30vh;
     display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.vebro-navbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100%;
+    background: linear-gradient(180deg, 
+        rgba(31, 35, 53, 0.85) 0%,
+        rgba(31, 35, 53, 0.75) 30%,
+        rgba(31, 35, 53, 0.6) 60%,
+        rgba(31, 35, 53, 0.3) 100%);
+    z-index: 0;
+}
+
+.nav-top {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 20px;
-    margin-top: -10px;
+    padding: 30px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.nav-hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.nav-hero h1 {
+    color: #faf9e8;
+    font-family: 'Lucida Sans Unicode', sans-serif;
     letter-spacing: 15px;
     font-weight: bolder;
     font-size: clamp(30px, 8vw, 50px);
+    margin: 0;
 }
 
-.vebro-hero h2 {
-    color: #3E435A;
-    font-family: 'Lucida Sans Unicode', sans-serif; 
-    font-weight: semi-bold;
-    font-size: clamp(20px, 4vw, 30px);
-    letter-spacing: 3px;
-    margin-top: -30px;
+.nav-hero h2 {
+    color: #faf9e8;
+    font-family: 'Lucida Sans Unicode', sans-serif;
+    font-size: clamp(16px, 3vw, 24px);
+    margin-top: 1rem;
 }
 
-.vebro-hero p {
+.nav-carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.nav-top, .nav-hero {
+    position: relative;
+    z-index: 1;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    background-size: cover;
+    background-position: center;
+}
+
+.carousel-slide:nth-child(1) {
+    background-image: url('/assets/images/vebro-temp.jpg');
+}
+
+.carousel-slide:nth-child(2) {
+    background-image: url('/assets/images/Hero-temp.jpg');
+}
+
+.carousel-slide:nth-child(3) {
+    background-image: url('/assets/images/vebro-temp.jpg');
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+/* Content sections styling */
+.vebro-points {
+    padding: 4rem 2rem;
+    position: relative;
+}
+
+#vebro-about {
+    padding-top: 2rem;
+    margin-top: 0;
+}
+
+.vebro-points h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #1f2335;
+    font-family: 'Lucida Sans Unicode', sans-serif;
+}
+
+
+
+.vebro-hero p{
     font-size: 16px;
     line-height: 1.6;
     color: #3E435A;
@@ -52,6 +155,25 @@
     height: 1.3px;
     background-color: #4E3A02;
 }
+
+.vebro-points h3 {
+    color: #4E3A02;
+    font-family: 'Lucida Sans Unicode', sans-serif;
+    font-size: 1.3rem;
+    margin: 0;
+    letter-spacing: 1px;
+    margin-bottom:5px;
+    font-weight: semi-bold;
+}
+
+.vebro-points li {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #4E3A02;
+    font-family: 'Lucida Sans Unicode', sans-serif;
+    font-size: 1rem;
+}
+
 
 .navbar {
     background-color: #3E435A;

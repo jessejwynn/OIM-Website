@@ -107,13 +107,13 @@
 }
 
 .calendar-day.selected {
-    background: #007bff;
-    color: #fff;
+    background: #91a9d4;
+    color: #fff1d8;
 }
 
 .calendar-day.today {
-    border: 1px solid #007bff;
-    color: #007bff;
+    border: 1px solid #3d517b;
+    color: rgb(161, 220, 229);
 }
 
 .calendar-day.disabled {
