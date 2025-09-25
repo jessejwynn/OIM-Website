@@ -1,82 +1,44 @@
 /* Vebro page specific styles */
 /* Override or add styles specific to vebro.html here */
 
-/* Navigation Carousel Styles */
-.vebro-navbar {
-    position: relative;
-    overflow: hidden;
-    background: transparent;
-    height: 30vh;
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+/* Vebro Hero Section */
+.vebro-hero {
+    height: 40vh; /* Half the height of the original hero */
+    background: none; /* Remove background as we'll use carousel instead */
+    padding: 30px 0; /* Adjust padding for shorter height */
 }
 
-.vebro-navbar::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100vw;
-    height: 100%;
-    background: linear-gradient(180deg, 
-        rgba(31, 35, 53, 0.85) 0%,
-        rgba(31, 35, 53, 0.75) 30%,
-        rgba(31, 35, 53, 0.6) 60%,
-        rgba(31, 35, 53, 0.3) 100%);
-    z-index: 0;
-}
-
-.nav-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 0;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.nav-hero {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.vebro-hero .hero-content {
     align-items: center;
     text-align: center;
-    padding: 2rem;
+    justify-content: center;
 }
 
-.nav-hero h1 {
-    color: #faf9e8;
-    font-family: 'Lucida Sans Unicode', sans-serif;
-    letter-spacing: 15px;
-    font-weight: bolder;
-    font-size: clamp(30px, 8vw, 50px);
+.vebro-hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
     margin: 0;
-}
-
-.nav-hero h2 {
-    color: #faf9e8;
     font-family: 'Lucida Sans Unicode', sans-serif;
-    font-size: clamp(16px, 3vw, 24px);
-    margin-top: 1rem;
+    font-weight: bold;
+    letter-spacing: 7px;
+    color: #f9ebd1;
 }
 
-.nav-carousel {
+.vebro-hero p.tagline {
+    font-size: 1.3rem;
+    font-family: 'Lucida Sans Unicode', sans-serif;
+    margin: 10px 0 0 0;
+    color: #f9ebd1;
+    font-weight: lighter;
+}
+
+/* Carousel styling */
+.carousel-container {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
-}
-
-.nav-top, .nav-hero {
-    position: relative;
-    z-index: 1;
+    z-index: 0;
 }
 
 .carousel-slide {
@@ -86,7 +48,7 @@
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 1.5s ease-in-out;
     background-size: cover;
     background-position: center;
 }
@@ -100,11 +62,25 @@
 }
 
 .carousel-slide:nth-child(3) {
-    background-image: url('/assets/images/vebro-temp.jpg');
+    background-image: url('/assets/images/temp-logs.jpg');
 }
 
 .carousel-slide.active {
     opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .vebro-hero {
+        height: 50vh;
+    }
+    
+    .vebro-hero h1 {
+        font-size: clamp(1.8rem, 4vw, 2.3rem);
+    }
+    
+    .vebro-hero p.tagline {
+        font-size: 1.1rem;
+    }
 }
 
 /* Content sections styling */
