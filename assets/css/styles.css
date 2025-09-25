@@ -1,14 +1,4 @@
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
+/* Removed animated keyframes for performance */
 
 html {
     scroll-behavior: smooth;
@@ -22,7 +12,7 @@ body {
       overflow-x: hidden;
     }
 
-    /* Animated gradient background */
+    /* Static gradient background for improved performance */
     body::before {
       content: '';
       position: fixed;
@@ -31,8 +21,9 @@ body {
       width: 100%;
       height: 100%;
       background: linear-gradient(-45deg, #d3f3f6, #fdffea, #f7e9cc, #c9dade);
-      background-size: 400% 400%;
-      animation: gradientAnimation 15s ease infinite;
+      background-size: 200% 200%;
+      background-position: center;
+      /* Removed animation for better CPU performance */
       z-index: -2;
     }
 
@@ -52,7 +43,6 @@ body {
       pointer-events: none;
     }
 
-    /* Floating Navbar */
     .floating-navbar {
         position: fixed;
         top: 0;
@@ -63,13 +53,11 @@ body {
         align-items: center;
         padding: 30px 0;
         width: 95%;
-        margin: 0 auto;
-        max-width: 1200px;
+        margin: 0 auto;  
         z-index: 1001;
         transform: translateY(-100%);
         transition: transform 0.3s ease;
     }
-    
     
 
     .floating-navbar::before {
@@ -138,7 +126,7 @@ body {
         -webkit-backdrop-filter: blur(6px);
         opacity: 0;
         visibility: hidden;
-        transition: all 0.3s ease;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
         z-index: 990;
     }
 
@@ -209,7 +197,7 @@ body {
       z-index: 1002;
       width: 90%;
       margin: 0 auto;
-      max-width: 1200px;
+      max-width: auto;
     }
     .logo img {
       height: 100px;
@@ -217,6 +205,7 @@ body {
       transition: transform 0.3s ease;
       position: relative;
       z-index: 1002;
+      padding: 0 50px;
     }
     .logo img:hover {
       transform: scale(1.05);
@@ -225,6 +214,7 @@ body {
       display: flex;
       gap: 40px;
       align-items: center;
+      padding: 0 50px;
     }
     
     header a {
@@ -280,7 +270,7 @@ body {
       -webkit-backdrop-filter: blur(6px);
       opacity: 0;
       visibility: hidden;
-      transition: all 0.3s ease;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
       z-index: 990;
       border-radius: 30px; /* Match hero border-radius */
     }
@@ -384,14 +374,7 @@ body {
       z-index: 1002;
     }
 
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+    
     
     @media (max-width: 768px) {
       .hero {
@@ -429,7 +412,7 @@ body {
     .nav-format {
       font-size: clamp(1rem, 2.5vw, 1.5rem);
       letter-spacing: 3px;
-
+      
     }
     
     .hero::after {
@@ -443,7 +426,7 @@ body {
     .hero-content {
       position: relative;
       z-index: 1;
-      max-width: 1200px;
+      max-width: auto;
       width: 90%;
       height: 100%;
       margin: auto;
@@ -451,6 +434,8 @@ body {
       flex-direction: column;
       justify-content: center;
       color: #f9ebd1;
+      /* flex: 1;
+      display: flex; */
     }
     
     .hero-content > div:first-child {
@@ -461,16 +446,16 @@ body {
     .hero .description {
       position: absolute;
       bottom: 60px;
-      right: 5%;
+      right: 0;
+      margin-right: 5%;
       max-width: 400px;
       text-align: right;
-      margin: 0;
-      padding: 20px;
-      border-radius: 10px;
+      /* margin: 0; */
+      /* padding: 20px; */
     }
     
     .hero h1 {
-      font-size: clamp(2.5rem, 5vw, 3rem);
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
       margin: 0;
       font-family: 'Lucida Sans Unicode', sans-serif;
       font-weight: lighter;
@@ -478,7 +463,7 @@ body {
       color: #f9ebd1;
     }
     .hero p.tagline {
-      font-size: 2rem;
+      font-size: clamp(1.5rem, 3vw, 2rem);
       font-family: 'Lucida Sans Unicode', sans-serif;
       margin: 1px 0 0 0;
       color: #f9ebd1;
@@ -491,12 +476,13 @@ body {
       letter-spacing: 2px;
       color: #f9ebd1;
     }
+
     section {
       padding: 60px 40px;
-      max-width: 1500px;
+      max-width: 95%;
       margin: auto;
     }
-
+    
     #what-we-do {
       position: relative;
       padding-bottom: 0px;
@@ -749,7 +735,7 @@ body {
 
     .header-item h3 {
       font-family: 'Lucida Sans Unicode', sans-serif;
-      font-size: 1.3rem;
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
       font-weight: normal;
       margin: 0;
       color: white;
@@ -819,7 +805,7 @@ body {
       justify-content: space-between;
       align-items: center;
       padding: 60px 40px;
-      max-width: 1500px;
+      /* max-width: 1500px; */
       margin: 0 auto;
     }
 
@@ -1180,7 +1166,7 @@ body {
     .section-header {
       opacity: 0;
       transform: translateX(-100px);
-      transition: opacity 0.8s ease-out, transform 0.6s ease-out;
+      transition: opacity 0.2s ease-out, transform 0.2s ease-out;
     }
 
     .section-header.animate-in {

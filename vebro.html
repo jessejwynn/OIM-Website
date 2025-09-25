@@ -10,25 +10,37 @@
     <script src="/assets/js/menu.js"></script>
     <script src="/assets/js/form-validation.js"></script>
     <script src="/assets/js/carousel.js"></script>
-    <script src="/assets/js/floating-nav.js"></script>
-    <script src="/assets/js/scroll-animations.js"></script>
+    <script src="/assets/js/optimized-scroll.js"></script>
 </head>
 <body>
     <div class="floating-navbar">
-        <div class="logo">
+        <div class="logo" style="margin-left: 50px;">
             <a href="/">
                 <img src="/assets/images/optima-logo-nodesc.PNG" alt="Optima Logo">
             </a>
         </div>
-        <nav class="nav-format">
-            <a href="#" class="lang-switch">En</a>
+        <nav class="nav-format" style="margin-right: 50px;">
+            <a href="#" class="lang-switch">Id</a>
             <a href="#contact">Contact</a>
-            <button class="menu-toggle" aria-label="Menu">
+            <button class="menu-toggle floating-menu-toggle" aria-label="Menu">
                 <span class="menu-line"></span>
                 <span class="menu-line"></span>
                 <span class="menu-line"></span>
             </button>
         </nav>
+        <div class="floating-menu-overlay">
+            <div class="menu-content">
+                <div class="menu-items">
+                    <a href="/#what-we-do">About Us</a>
+                    <div class="menu-group">
+                        <a href="/#our-imports" class="menu-group-header">Products</a>
+                        <a href="/vebro.html" target="_blank">Vebro</a>
+                        <a href="/products.html" target="_blank">Catalogue</a>
+                    </div>
+                    <a href="/#our-locations">Locations</a>
+                </div>
+            </div>
+        </div>
     </div>
     <section class="hero vebro-hero">
         <div class="carousel-container">
@@ -43,7 +55,7 @@
                 </a>
             </div>
             <nav class="nav-format">
-                <a href="#" class="lang-switch">En</a>
+                <a href="#" class="lang-switch">Id</a>
                 <a href="#contact">Contact</a>
                 <button class="menu-toggle" aria-label="Menu">
                     <span class="menu-line"></span>
@@ -100,7 +112,7 @@
     </section>
 
     <section class="vebro-points" id="pu-vs-epoxy">
-        <h2>PU vs Epoxy</h2>
+        <h2>PU vs EPOXY</h2>
         <div class="content-wrapper">
             <div class="glass-card" style="min-width: 750px; display: flex; gap: 40px;">
                 <div style="flex: 1;">
@@ -127,7 +139,7 @@
     </section>
 
     <section class="vebro-points" id="phthalate-free">
-        <h2>Phthalates</h2>
+        <h2>PHTHALATES</h2>
         <div class="content-wrapper">
             <div class="glass-card">
                 <h3>What are Phthalates?</h3>
@@ -165,7 +177,7 @@
 
 
     <section class="vebro-points" id="vebro-vs-others">
-        <h2>Vebro vs Others</h2>
+        <h2>VEBRO vs OTHERS</h2>
         <div class="content-wrapper">
             <div class="glass-card">
                 <p>
@@ -176,7 +188,7 @@
 
 
     <section class="vebro-points" id="products">
-        <h2>Products</h2>
+        <h2>PRODUCTS</h2>
         <div class="products-grid">
             <div class="product-card">
                 <div class="product-image">
@@ -219,6 +231,16 @@
                 </div>
                 <h3>Product 6</h3>
                 <p>description here</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="vebro-points" id="vebro-vs-others">
+        <h2>CALCULATE</h2>
+        <div class="content-wrapper">
+            <div class="glass-card">
+                <p>
+                </p>
             </div>
         </div>
     </section>
