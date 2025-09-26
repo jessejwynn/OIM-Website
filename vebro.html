@@ -239,8 +239,7 @@
         <h2>CALCULATE</h2>
         <div class="content-wrapper">
             <div class="glass-card">
-                <p>
-                </p>
+                <div id="calc-root"></div>
             </div>
         </div>
     </section>
@@ -353,5 +352,178 @@
     </footer>
 
     <script src="/assets/js/calendar.js"></script>
+    <script>
+    // ==== Config (generated from your spreadsheet). Keep or update values anytime. ====
+    const SYSTEMS = [
+    {"name":"Sistem Scratch-Coat ( 0,64 KG/M2)","items":[
+        {"product":"Universal A","kg_per_m2":0.186932,"pack_size_kg":2.85,"pack_type":"/jerigen","price_per_pack":229354.53725433873},
+        {"product":"Universal B","kg_per_m2":0.206609,"pack_size_kg":3.15,"pack_type":"/jerigen","price_per_pack":209275.26378722538},
+        {"product":"Filler C#1","kg_per_m2":0.906458,"pack_size_kg":13.82,"pack_type":"/zak","price_per_pack":131164.8138566646}
+    ]},
+    {"name":"Vebro SL 2mm (sistem Resin Mortar 2:1)","items":[
+        {"product":"Universal A","kg_per_m2":0.224389,"pack_size_kg":2.85,"pack_type":"/jerigen","price_per_pack":229354.53725433873},
+        {"product":"Universal B","kg_per_m2":0.248106,"pack_size_kg":3.15,"pack_type":"/jerigen","price_per_pack":209275.26378722538},
+        {"product":"Filler C#1","kg_per_m2":1.271746,"pack_size_kg":13.82,"pack_type":"/zak","price_per_pack":131164.8138566646},
+        {"product":"Pigment colour","kg_per_m2":0.2525,"pack_size_kg":0.18,"pack_type":"/sachet","price_per_pack":45093.83660177376},
+        {"product":"Solvent / THF","kg_per_m2":0.0,"pack_size_kg":null,"pack_type":null,"price_per_pack":null}
+    ]},
+    {"name":"Vebro MF 4mm (sistem Scratch-coat)","items":[
+        {"product":"Universal A","kg_per_m2":0.81,"pack_size_kg":2.85,"pack_type":"/jerigen","price_per_pack":229354.53725433873},
+        {"product":"Universal B","kg_per_m2":0.90,"pack_size_kg":3.15,"pack_type":"/jerigen","price_per_pack":209275.26378722538},
+        {"product":"Filler C#1","kg_per_m2":2.61,"pack_size_kg":13.82,"pack_type":"/zak","price_per_pack":131164.8138566646},
+        {"product":"Pigment colour","kg_per_m2":0.03,"pack_size_kg":0.18,"pack_type":"/sachet","price_per_pack":45093.83660177376},
+        {"product":"Thixotropic Agent","kg_per_m2":0.0,"pack_size_kg":null,"pack_type":null,"price_per_pack":null}
+    ]},
+    // …you can paste the rest of the systems here if you want full coverage
+    ];
+
+    // ==== Helpers ====
+    const formatIDR = n => n == null || isNaN(n) ? "-" :
+    new Intl.NumberFormat("id-ID",{style:"currency",currency:"IDR",maximumFractionDigits:0}).format(n);
+
+    const ceilDiv = (a,b) => (!a || !b || a===0 || b===0) ? null : Math.ceil(a/b);
+    
+    // Helper to create tooltip with calculation explanation
+    const createCalculationTooltip = (area, coveragePerPack, packs) => {
+      if (!area || !coveragePerPack || !packs) return "";
+      return `title="Area (${area} m²) ÷ Coverage per pack (${coveragePerPack.toFixed(1)} m²) = ${(area/coveragePerPack).toFixed(2)} → ${packs} packs"`;
+    };
+
+    // Hide “utility” items whose consumption is zero (e.g., Solvent/Thixotropic lines in some systems)
+    const shouldShowItem = it => Number(it.kg_per_m2 || 0) > 0;
+
+    // ==== Calculator logic/render ====
+    function renderCalculator(root) {
+    root.innerHTML = `
+        <div style="display:grid; gap:12px; grid-template-columns: repeat(3, minmax(0,1fr)); align-items:end;">
+        <div>
+            <label style="display:block; font-size:14px; margin-bottom:6px;">System</label>
+            <select id="sys" style="width:100%; padding:8px; border:1px solid #ccc; border-radius:8px;"></select>
+        </div>
+        <div>
+            <label style="display:block; font-size:14px; margin-bottom:6px;">Area (m²)</label>
+            <input id="area" type="number" min="0" step="1" value="100"
+                style="width:100%; padding:8px; border:1px solid #ccc; border-radius:8px;" />
+        </div>
+        <div>
+            <label style="display:block; font-size:14px; margin-bottom:6px;">Wastage / Safety (%)</label>
+            <input id="waste" type="number" min="0" step="1" value="5"
+                style="width:100%; padding:8px; border:1px solid #ccc; border-radius:8px;" />
+        </div>
+        </div>
+
+        <div id="totals" style="display:grid; gap:12px; grid-template-columns: repeat(3, minmax(0,1fr)); margin-top:16px;">
+        <div style="padding:12px; background:rgba(255,255,255,0.6); border-radius:12px;">
+            <div style="font-size:12px; opacity:.7;">Total mass</div>
+            <div id="t-kg" style="font-size:20px; font-weight:600;">0 kg</div>
+        </div>
+        <div style="padding:12px; background:rgba(255,255,255,0.6); border-radius:12px;">
+            <div style="font-size:12px; opacity:.7;">Estimated packs</div>
+            <div id="t-packs" style="font-size:20px; font-weight:600;">0</div>
+        </div>
+        <div style="padding:12px; background:rgba(255,255,255,0.6); border-radius:12px;">
+            <div style="font-size:12px; opacity:.7;">Estimated material cost</div>
+            <div id="t-cost" style="font-size:20px; font-weight:600;">-</div>
+        </div>
+        </div>
+
+        <div style="overflow-x:auto; margin-top:14px;">
+        <table id="rows" style="width:100%; border-collapse:collapse; font-size:14px;">
+            <thead>
+            <tr style="text-align:left; border-bottom:1px solid #ccc;">
+                <th style="padding:8px 10px;">Product</th>
+                <th style="padding:8px 10px;">kg/m²</th>
+                <th style="padding:8px 10px;">Needed (kg)</th>
+                <th style="padding:8px 10px;">Pack size</th>
+                <th style="padding:8px 10px;">Coverage/pack (m²)</th>
+                <th style="padding:8px 10px;">Packs Required</th>
+                <th style="padding:8px 10px;">Price/pack</th>
+                <th style="padding:8px 10px;">Subtotal</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div style="font-size:12px; opacity:.7; margin-top:8px;">
+            Notes: Packs Required = Area ÷ Coverage per pack (rounded up). Total mass = Sum of (Packs × Pack size). Prices shown here are for guidance only.
+        </div>
+        </div>
+    `;
+
+    // Populate systems
+    const sysSel = root.querySelector("#sys");
+    SYSTEMS.forEach((s, i) => {
+        const opt = document.createElement("option");
+        opt.value = i; opt.textContent = s.name;
+        sysSel.appendChild(opt);
+    });
+
+    const areaEl = root.querySelector("#area");
+    const wasteEl = root.querySelector("#waste");
+    const tbody = root.querySelector("#rows tbody");
+    const tKg = root.querySelector("#t-kg");
+    const tPacks = root.querySelector("#t-packs");
+    const tCost = root.querySelector("#t-cost");
+
+    function recalc() {
+        const sys = SYSTEMS[Number(sysSel.value)];
+        const area = Number(areaEl.value || 0);
+        const waste = 1 + (Number(wasteEl.value || 0) / 100);
+
+        let totalKg = 0, totalPacks = 0, totalCost = 0;
+
+        tbody.innerHTML = "";
+
+        sys.items
+        .filter(shouldShowItem) // hide rows with 0 kg/m²
+        .forEach(it => {
+            // Calculate packs needed based on area / thickness
+            const packs = it.kg_per_m2 > 0 ? ceilDiv(area, (it.pack_size_kg / it.kg_per_m2)) : null;
+            
+            // Calculate kg needed as packs * kg of product
+            const kgNeeded = packs && it.pack_size_kg ? packs * it.pack_size_kg * waste : 0;
+            totalKg += kgNeeded;
+            
+            if (packs) totalPacks += packs;
+
+            const cost = (packs && it.price_per_pack) ? packs * it.price_per_pack : null;
+            if (cost) totalCost += cost;
+
+            // This is correct - coverage per pack is pack size divided by kg/m²
+            const coveragePerPack = (it.pack_size_kg && it.kg_per_m2) ? (it.pack_size_kg / it.kg_per_m2) : null;
+
+            const tr = document.createElement("tr");
+            tr.style.borderBottom = "1px solid #eee";
+            tr.innerHTML = `
+            <td style="padding:8px 10px;">${it.product} ${it.pack_type ? `<span style="opacity:.5;">(${it.pack_type})</span>` : ""}</td>
+            <td style="padding:8px 10px;">${(it.kg_per_m2 ?? 0).toFixed(6)}</td>
+            <td style="padding:8px 10px;">${kgNeeded ? kgNeeded.toFixed(2) : "-"}</td>
+            <td style="padding:8px 10px;">${it.pack_size_kg ? (it.pack_size_kg + " kg") : "-"}</td>
+            <td style="padding:8px 10px;">${coveragePerPack ? coveragePerPack.toFixed(1) : "-"}</td>
+            <td style="padding:8px 10px; cursor:help;" ${coveragePerPack && packs ? createCalculationTooltip(area, coveragePerPack, packs) : ""}>${packs ?? "-"}</td>
+            <td style="padding:8px 10px;">${it.price_per_pack ? formatIDR(it.price_per_pack) : "-"}</td>
+            <td style="padding:8px 10px;">${cost ? formatIDR(cost) : "-"}</td>
+            `;
+            tbody.appendChild(tr);
+        });
+
+        tKg.textContent = `${totalKg.toFixed(2)} kg`;
+        tPacks.textContent = `${totalPacks}`;
+        tCost.textContent = formatIDR(totalCost);
+    }
+
+    sysSel.addEventListener("change", recalc);
+    areaEl.addEventListener("input", recalc);
+    wasteEl.addEventListener("input", recalc);
+
+    recalc();
+    }
+
+    // Boot
+    document.addEventListener("DOMContentLoaded", () => {
+    const mount = document.getElementById("calc-root");
+    if (mount) renderCalculator(mount);
+    });
+    </script>
+
 </body>
 </html>

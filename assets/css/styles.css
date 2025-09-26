@@ -350,7 +350,7 @@ body {
       overflow: hidden;
       max-width: 95%;
       margin: 20px auto;
-      transition: all 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
       isolation: isolate; /* Creates a new stacking context */
     }
 
