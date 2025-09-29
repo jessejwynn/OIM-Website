@@ -390,7 +390,7 @@
     // ==== Calculator logic/render ====
     function renderCalculator(root) {
     root.innerHTML = `
-        <div style="display:grid; gap:12px; grid-template-columns: repeat(3, minmax(0,1fr)); align-items:end;">
+        <div style="display:grid; gap:12px; grid-template-columns: repeat(2, minmax(0,1fr)); align-items:end;">
         <div>
             <label style="display:block; font-size:14px; margin-bottom:6px;">System</label>
             <select id="sys" style="width:100%; padding:8px; border:1px solid #ccc; border-radius:8px;"></select>
@@ -398,11 +398,6 @@
         <div>
             <label style="display:block; font-size:14px; margin-bottom:6px;">Area (m²)</label>
             <input id="area" type="number" min="0" step="1" value="100"
-                style="width:100%; padding:8px; border:1px solid #ccc; border-radius:8px;" />
-        </div>
-        <div>
-            <label style="display:block; font-size:14px; margin-bottom:6px;">Wastage / Safety (%)</label>
-            <input id="waste" type="number" min="0" step="1" value="5"
                 style="width:100%; padding:8px; border:1px solid #ccc; border-radius:8px;" />
         </div>
         </div>
@@ -445,7 +440,6 @@
     });
 
     const areaEl = root.querySelector("#area");
-    const wasteEl = root.querySelector("#waste");
     const tbody = root.querySelector("#rows tbody");
     const tKg = root.querySelector("#t-kg");
     const tSets = root.querySelector("#t-sets");
@@ -453,7 +447,6 @@
     function recalc() {
         const sys = SYSTEMS[Number(sysSel.value)];
         const area = Number(areaEl.value || 0);
-        const waste = 1 + (Number(wasteEl.value || 0) / 100);
 
         // Step 1: Sum all kg_per_m2
         const totalKgPerM2 = sys.items
@@ -480,7 +473,7 @@
         .filter(shouldShowItem) // hide rows with 0 kg/m²
         .forEach(it => {
             // Step 6: Calculate individual product needed
-            const kgNeeded = totalPacksNeeded && it.kg_per_m2 ? totalPacksNeeded * it.kg_per_m2 * waste : 0;
+            const kgNeeded = totalPacksNeeded && it.kg_per_m2 ? totalPacksNeeded * it.kg_per_m2 : 0;
             
             const tr = document.createElement("tr");
             tr.style.borderBottom = "1px solid #eee";
@@ -505,7 +498,6 @@
 
     sysSel.addEventListener("change", recalc);
     areaEl.addEventListener("input", recalc);
-    wasteEl.addEventListener("input", recalc);
 
     recalc();
     }
