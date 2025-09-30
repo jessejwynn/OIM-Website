@@ -433,10 +433,7 @@ body {
     @media (max-width: 768px) {
       .hero .description {
         display: none;
-      } 
-      
-      
-      
+      }       
     }
 
     
@@ -721,6 +718,28 @@ body {
 
     #floor-coating-card strong {
       font-weight: 600;
+    }
+
+    @media (max-width: 1200px) {
+      .import-content {
+        height: 500px;
+      }
+
+      #vebro-image {
+        position: relative;
+        width: 70%;
+        max-width: 400px;
+        min-width: unset;
+        height: 300px;
+        left: auto;
+        margin: 0 auto;
+        top: 250px;
+        transform: none;
+      }
+
+      #floor-coating-card {
+        top: 120px;
+      }
     }
 
     .import-header {
