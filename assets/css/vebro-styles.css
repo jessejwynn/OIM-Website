@@ -80,6 +80,7 @@
     
     .vebro-hero p.tagline {
         font-size: 1.1rem;
+        margin-bottom: 200px;
     }
 }
 
@@ -272,7 +273,7 @@
 }
 
 /* Desktop layout: 3 columns, 2 rows */
-@media (min-width: 769px) {
+@media (min-width: 768px) {
     .products-grid {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, auto);
