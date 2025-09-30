@@ -570,7 +570,7 @@ body {
     }
 
     .glass-card p {
-      font-size: 1.2rem;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
       line-height: 1.6;
       color: #4E3A02;
       margin: 0;
@@ -586,10 +586,12 @@ body {
       transform: translateY(-50%); /* Centers the card vertically */
     }
 
+  
+
     @media (max-width: 1200px) {
       .content-wrapper {
         height: auto;
-        padding: 20px 0;
+        /* padding: 20px 0; */
       }
 
       .section-image {
@@ -603,10 +605,29 @@ body {
         transform: none;
         margin: 0 auto;
       }
+
+      .import-content {
+        height: 500px;
+      }
       
+
       #vebro-image {
+        position: relative;
+        width: 90%;
+        max-width: clamp(300px, 50vw, 700px);
+        min-width: unset;
+        height: 300px;
         left: auto;
         margin: 0 auto 30px;
+        top: 250px;
+        transform: none;
+      }
+
+      #floor-coating-card {
+        position: relative;
+        width: calc(100% - 80px);
+        max-width: 600px;
+        min-width: 250px;
       }
 
       #what-we-do-card {
@@ -621,12 +642,29 @@ body {
       }
     }
 
+    @media ( max-width: 950px) {
+      #floor-coating-card {
+        position: relative;
+        width: calc(100% - 80px);
+        max-width: 500px;
+        min-width: 350px;
+        top: -20px;
+      }
+    }
     @media (max-width: 768px) {
       .section-image {
         height: 300px;
         width: 100%;
         max-width: 100%;
       }
+
+      #floor-coating-card {
+        position: relative;
+        width: calc(100% - 80px);
+        max-width: 600px;
+        min-width: 350px;
+        top: -20px;
+      }      
 
       #what-we-do-card {
         width: calc(100% - 40px);
@@ -643,6 +681,38 @@ body {
         flex-direction: column;
         gap: 80px;
       }
+      #vebro-image {
+        max-width: 350px;
+      }
+    }
+
+    @media (max-width: 550px) {
+      #floor-coating-card {
+        min-width:auto;
+        margin-top: -80px;
+      }
+
+      #floor-coating-card .import-description {
+        display: none;
+      }
+
+      #vebro-image {
+        position: relative;
+        max-width: 350px;
+        top:-100px;
+      }
+
+      /* #vebro-image {
+        position: relative;
+        width: 90%;
+        max-width: clamp(300px, 50vw, 700px);
+        min-width: unset;
+        height: 300px;
+        left: auto;
+        margin: 0 auto 30px;
+        top: 250px;
+        transform: none;
+      } */
     }
     /* Our Imports Section */
     #our-imports {
@@ -670,7 +740,10 @@ body {
     }
     
     #vebro-image {
-      position: absolute;
+      left: 5%; /* Position from left instead of right */
+      right: auto; /* Reset right positioning */
+      margin-top: -50px; /* Move image up by changing this value from positive to negative */
+      top: 50%; /* Maintain vertical centering with new offset */
     }
 
     .subsection {
@@ -702,7 +775,7 @@ body {
     #vebro-image {
       left: 5%; /* Position from left instead of right */
       right: auto; /* Reset right positioning */
-      margin-top: 50px; /* Move image down */
+      margin-top: -30px; /* Move image up by changing this value from positive to negative */
       top: 50%; /* Maintain vertical centering with new offset */
     }
 
@@ -713,34 +786,14 @@ body {
       transform: translateY(-50%);
       width: 40%;
       z-index: 1;
-      margin-left: -50px; /* Creates overlap with the image */
+      margin-left: -50px; 
     }
 
     #floor-coating-card strong {
       font-weight: 600;
     }
 
-    @media (max-width: 1200px) {
-      .import-content {
-        height: 500px;
-      }
-
-      #vebro-image {
-        position: relative;
-        width: 70%;
-        max-width: 400px;
-        min-width: unset;
-        height: 300px;
-        left: auto;
-        margin: 0 auto;
-        top: 250px;
-        transform: none;
-      }
-
-      #floor-coating-card {
-        top: 120px;
-      }
-    }
+    
 
     .import-header {
       display: flex;
