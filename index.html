@@ -98,7 +98,6 @@
 
     <section id="our-imports">
         <h2>OUR IMPORTS</h2>
-        
         <div class="content-wrapper">
             <div class="subsection">
                 <div class="import-content">
@@ -122,25 +121,97 @@
         </div>
         <div class="import-header">
             <div class="header-item">
-                <div class="portrait-container">
+                <div class="portrait-container" id="portrait-container-1">
                     <img src="/assets/images/temp-forklift.jpg" alt="Heavy Machinery" class="portrait-image">
                 </div>
-                <h3 style="margin-top: 20px;">Heavy Machinery</h3>
+                <h3>Heavy Machinery</h3>
             </div>
             <div class="header-item">
                 <div class="portrait-container">
+                    
+                    <div class="portrait-carousel">
+                        <ol class="carousel__viewport">
+                            <li id="carousel__slide1"
+                                tabindex="0"
+                                class="carousel__slide">
+                              <div class="carousel__snapper">
+                                <a href="#carousel__slide4"
+                                   class="carousel__prev">Go to last slide</a>
+                                <a href="#carousel__slide2"
+                                   class="carousel__next">Go to next slide</a>
+                              </div>
+                            </li>
+                            <li id="carousel__slide2"
+                                tabindex="0"
+                                class="carousel__slide">
+                              <div class="carousel__snapper"></div>
+                              <a href="#carousel__slide1"
+                                 class="carousel__prev">Go to previous slide</a>
+                              <a href="#carousel__slide3"
+                                 class="carousel__next">Go to next slide</a>
+                            </li>
+                            <li id="carousel__slide3"
+                                tabindex="0"
+                                class="carousel__slide">
+                              <div class="carousel__snapper"></div>
+                              <a href="#carousel__slide2"
+                                 class="carousel__prev">Go to previous slide</a>
+                              <a href="#carousel__slide4"
+                                 class="carousel__next">Go to next slide</a>
+                            </li>
+                            <li id="carousel__slide4"
+                                tabindex="0"
+                                class="carousel__slide">
+                              <div class="carousel__snapper"></div>
+                              <a href="#carousel__slide3"
+                                 class="carousel__prev">Go to previous slide</a>
+                              <a href="#carousel__slide1"
+                                 class="carousel__next">Go to first slide</a>
+                            </li>
+                          </ol>
+                          <aside class="carousel__navigation">
+                            <ol class="carousel__navigation-list">
+                              <li class="carousel__navigation-item">
+                                <a href="#carousel__slide1"
+                                   class="carousel__navigation-button">Go to slide 1</a>
+                              </li>
+                              <li class="carousel__navigation-item">
+                                <a href="#carousel__slide2"
+                                   class="carousel__navigation-button">Go to slide 2</a>
+                              </li>
+                              <li class="carousel__navigation-item">
+                                <a href="#carousel__slide3"
+                                   class="carousel__navigation-button">Go to slide 3</a>
+                              </li>
+                              <li class="carousel__navigation-item">
+                                <a href="#carousel__slide4"
+                                   class="carousel__navigation-button">Go to slide 4</a>
+                              </li>
+                            </ol>
+                    </div>
                     <img src="/assets/images/temp-logs.jpg" alt="Wood Processing" class="portrait-image">
                 </div>
-                <h3 style="margin-top: 20px;">Wood & Processing Machines</h3>
+                <div id="header-item-2">
+                    <h3>Wood & Processing Machines</h3>
+                </div>
             </div>
             <div class="header-item">
-                <div class="portrait-container">
+                <div class="portrait-container" id="portrait-container-3">
                     <img src="/assets/images/temp-petgreen.jpeg" alt="More Products" class="portrait-image">
                 </div>
-                <h3>MORE</h3>
-                <button class="catalog-button">OUR CATALOG</button>
+                <div id="header-item-3">
+                    <h3>MORE</h3>
+                    <button class="catalog-button">OUR CATALOG</button>
+                </div>
+                
+                
             </div>
+            
+
+            
         </div>
+        
+        
         <!-- <div> 
             <div class="header-image-wrapper">
                     <img src="/assets/images/temp-forklift.jpg" alt="Heavy Machinery" class="header-image">
@@ -166,8 +237,10 @@
                     <div class="location-image">
                         <img src="/assets/images/jkt-temp.jpg" alt="Jakarta Office">
                     </div>
+                    
                 </div>
             </div>
+            
             <!-- Add more slides as needed -->
             <div class="carousel-navigation">
                 <button class="nav-dot active" aria-label="Show slide 1"></button>
@@ -175,6 +248,7 @@
                 <button class="nav-dot" aria-label="Show slide 3"></button>
             </div>
         </div>
+        
     </section>
 
     <section id="contact">
