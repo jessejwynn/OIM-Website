@@ -75,10 +75,18 @@ body {
         left: 0;
         right: 0;
         height: 100px;
-        background-color: rgba(30, 34, 50, 0.98);
+        background-color: rgba(30, 34, 50);
         z-index: 1000;
         border-radius: 0 0 20px 20px;
         transform: translateY(-10px);
+        transition: height 0.3s ease; /* Add transition for smooth height change */
+    }
+
+    /* Add style for extended navbar background when menu is active */
+    .floating-navbar.menu-active::before {
+        height: 70vh; /* Full height of viewport */
+        border-radius: 10px; /* Remove border radius when extended */
+        z-index: 900;
     }
 
     .floating-navbar.visible {
@@ -86,7 +94,7 @@ body {
     }
 
     .floating-navbar .logo {
-        margin-left: 50px;
+        margin-left: 5%;
     }
 
     .floating-navbar .logo img {
@@ -101,7 +109,7 @@ body {
         display: flex;
         gap: 40px;
         align-items: center;
-        margin-right: 50px;
+        margin-right: 5%;
         font-size: clamp(1rem, 2.5vw, 1.5rem);
         letter-spacing: 3px;
         z-index: 1002;
@@ -147,6 +155,7 @@ body {
     .floating-menu-overlay.active {
         opacity: 1;
         visibility: visible;
+        
     }
 
     .floating-menu-overlay .menu-content {
@@ -154,6 +163,8 @@ body {
         margin: 0 auto;
         padding: 120px 40px 40px;
         height: 100%;
+        
+
     }
 
     .floating-menu-overlay .menu-items {
@@ -161,8 +172,8 @@ body {
         flex-direction: column;
         gap: 30px;
         align-items: flex-end;
-        margin-top: 100px;
-        margin-right: 20px;
+        margin-top: 30px;
+        margin-right: 5%;
         text-align: right;
     }
 
