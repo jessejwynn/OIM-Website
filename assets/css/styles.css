@@ -803,7 +803,7 @@ body {
     }
 
     .portrait-container {
-      width: 280px;
+      width:  clamp(240px, 25vw, 500px);
       height: 450px;
       position: absolute;
       left: 50%;
@@ -848,6 +848,7 @@ body {
         margin-top:-180px;
       }
     }
+
 
     .catalog-button {
       background: transparent;
