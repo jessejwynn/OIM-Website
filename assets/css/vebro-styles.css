@@ -6,12 +6,22 @@
     height: 40vh; /* Half the height of the original hero */
     background: none; /* Remove background as we'll use carousel instead */
     padding: 30px 0; /* Adjust padding for shorter height */
+    position: relative; /* Ensure positioning context */
+    overflow: hidden; /* Contain the carousel slides */
+    z-index: 1; /* Create stacking context */
+}
+
+.vebro-hero::before,
+.vebro-hero::after {
+    display: none !important; /* Prevent global hero overlays */
 }
 
 .vebro-hero .hero-content {
     align-items: left;
     text-align: left;
     justify-content: center;
+    position: relative;
+    z-index: 10; /* Ensure text is above carousel */
 }
 
 .vebro-hero h1 {
@@ -38,7 +48,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;
+    z-index: 1; /* Ensure carousel is behind text but above any other overlays */
 }
 
 .carousel-slide {
@@ -51,6 +61,18 @@
     transition: opacity 1.5s ease-in-out;
     background-size: cover;
     background-position: center;
+}
+
+/* Add dark overlay to each slide instead of having a separate overlay */
+.carousel-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 2;
 }
 
 .carousel-slide:nth-child(1) {

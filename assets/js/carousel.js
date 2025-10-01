@@ -1,5 +1,27 @@
 // Enhanced carousel functionality with improved navigation
 document.addEventListener('DOMContentLoaded', function() {
+    // Handle auto-slide carousels for Vebro page
+    const vebroCarousel = document.querySelector('.carousel-container');
+    if (vebroCarousel) {
+        const vebroSlides = vebroCarousel.querySelectorAll('.carousel-slide');
+        if (vebroSlides.length > 0) {
+            let currentSlideIndex = 0;
+            
+            // Show first slide immediately
+            vebroSlides[0].classList.add('active');
+            
+            // Function to advance to next slide
+            function nextVebroSlide() {
+                vebroSlides[currentSlideIndex].classList.remove('active');
+                currentSlideIndex = (currentSlideIndex + 1) % vebroSlides.length;
+                vebroSlides[currentSlideIndex].classList.add('active');
+            }
+            
+            // Start auto-rotation
+            setInterval(nextVebroSlide, 5000); // Change slides every 5 seconds
+        }
+    }
+    
     // Get all carousels on the page
     const carousels = document.querySelectorAll('.carousel');
     
