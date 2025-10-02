@@ -470,13 +470,36 @@
         top: 90px;
     }
 
+    #phthalate-free {
+        position: relative;
+        min-height: 300px; 
+        max-height: 580px;
+    }
 
+    #phthalates-desc {
+        max-width: clamp(600px, 50%, 700px);
+        color: #4E3A02;
+        font-family: 'Lucida Sans Unicode', sans-serif;
+        left:5%;
+    }
+
+    #phthalates-effects-image {
+        z-index: 0;
+        height: 300px;
+        bottom: 40px;
+        right: 5%;
+        top: 420px;
+    }
+
+    #health-concerns .glass-card {
+        min-width: 50px;
+        margin: 0 auto;
+        width: 20%;
+        top: -320px;
+        left: -20%;
+    }
     
 
-    
-
-   
-   
 
 }
 
@@ -509,4 +532,67 @@
 #vebro-about .content-wrapper {
     position: relative;
     min-height: 350px; /* Give enough space for the square image */
+}
+
+/* Calculator styling */
+#calc-root {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+#calc-root select,
+#calc-root input {
+    padding: 12px !important;
+    font-size: 16px !important;
+    border-radius: 8px !important;
+}
+
+#calc-root #totals > div {
+    padding: 20px !important;
+}
+
+#calc-root #t-kg,
+#calc-root #t-sets {
+    font-size: 24px !important;
+    font-weight: 600;
+}
+
+#calc-root table {
+    margin-top: 20px;
+    width: 100%;
+    font-size: 16px !important;
+}
+
+#calc-root table th,
+#calc-root table td {
+    padding: 12px !important;
+}
+
+/* Calculator responsive design */
+@media (max-width: 768px) {
+    #calc-root {
+        padding: 20px;
+    }
+    
+    #calc-root #totals {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+    
+    #calc-root table {
+        font-size: 14px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    #calc-root {
+        padding: 15px;
+    }
+    
+    #calc-root table {
+        font-size: 12px !important;
+    }
 }

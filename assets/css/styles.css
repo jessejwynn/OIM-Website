@@ -1,4 +1,14 @@
-/* Removed animated keyframes for performance */
+@keyframes gradientAnimation {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
 
 html {
     scroll-behavior: smooth;
@@ -12,6 +22,21 @@ body {
       overflow-x: hidden;
     }
 
+    /* Animated gradient background */
+    /* body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(-45deg, #e1d7bc, #ece4c8, #f6eeda, #f3e0de);
+      background-size: 400% 400%;
+      animation: gradientAnimation 15s ease infinite; 
+      z-index: -2;
+    } */
+
+
     /* Static gradient background for improved performance */
     body::before {
       content: '';
@@ -23,9 +48,10 @@ body {
       background: linear-gradient(-45deg, #d3f3f6, #fdffea, #f7e9cc, #c9dade);
       background-size: 200% 200%;
       background-position: center;
-      /* Removed animation for better CPU performance */
       z-index: -2;
     }
+
+
 
     /* Grid pattern overlay */
     body::after {
