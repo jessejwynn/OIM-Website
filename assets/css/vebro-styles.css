@@ -3,7 +3,7 @@
 
 /* Vebro Hero Section */
 .vebro-hero {
-    height: 40vh; /* Half the height of the original hero */
+    height: 50vh; /* Half the height of the original hero */
     background: none; /* Remove background as we'll use carousel instead */
     padding: 30px 0; /* Adjust padding for shorter height */
     position: relative; /* Ensure positioning context */
@@ -39,6 +39,14 @@
     margin: 10px 0 0 0;
     color: #f9ebd1;
     font-weight: lighter;
+}
+
+.menu-items {
+    margin-top: 45px;
+}
+
+.floating-menu-overlay .menu-items {
+    margin-top: 0px;
 }
 
 /* Carousel styling */
@@ -166,6 +174,7 @@
 }
 
 .vebro-points li {
+    list-style:circle;
     font-size: clamp(0.9rem, 2.5vw, 1.2rem);
     line-height: 1.6;
     color: #4E3A02;
@@ -382,3 +391,122 @@
     font-size: 0.8rem;
 }
 
+
+
+/* DIFFERENT SCREEN SIZES */
+@media (min-width: 1200px) {
+
+    #about-vebro-desc {
+        font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+        max-width: clamp(600px, 50%, 700px);
+        margin: 0 auto 20px auto;
+        text-align: center;
+        color: #4E3A02;
+        font-family: 'Lucida Sans Unicode', sans-serif;
+        top:45px;
+    }
+    
+    #about-vebro-image-1 {
+      z-index: 0;
+      height: 300px;
+      top: 355px;
+      right: 5%;
+    }
+
+    .square-image-container{
+        top: 0px;
+        left:5%;
+    }
+
+    #pu-concrete-desc {
+        font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+        max-width: clamp(600px, 50%, 700px);
+        color: #4E3A02;
+        font-family: 'Lucida Sans Unicode', sans-serif;
+        left: 5%;
+    }
+    #PU-Concrete {
+        width: 100%;
+        max-width: clamp(800px, 50%, 1000px);
+        height: 250px;
+        border-radius: 10px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        margin-top: 4%;
+        right: 5%;
+    }
+    #what-is-pu-concrete .content-wrapper {
+        position: relative;
+        min-height: 300px; 
+        max-height: 400px;
+        /* height: 250px; */
+    }
+
+    #PU-Comparison {
+        width: 100%;
+        max-width: clamp(100px, 50%, 400px);
+        height: 250px;
+        border-radius: 10px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        margin-top: -8%;
+        left: 5%;
+    }
+    #Epoxy-Comparison {
+        width: 100%;
+        max-width: clamp(100px, 50%, 400px);
+        height: 250px;
+        border-radius: 10px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        margin-top: 8%;
+        right: 5%;
+    }
+
+    #pu-vs-epoxy-desc {
+        font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+        max-width: clamp(600px, 50%, 700px);
+        margin: 0 auto 20px auto;
+        text-align: left;
+        color: #4E3A02;
+        font-family: 'Lucida Sans Unicode', sans-serif;
+        top: 90px;
+    }
+
+
+    
+
+    
+
+   
+   
+
+}
+
+/* Square image container */
+.square-image-container {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    bottom: 40px;
+    left: 5%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    z-index: -1;
+}
+
+.square-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.square-image:hover {
+    transform: scale(1.05);
+}
+
+/* Make sure the content wrapper has proper positioning for absolute elements */
+#vebro-about .content-wrapper {
+    position: relative;
+    min-height: 350px; /* Give enough space for the square image */
+}
