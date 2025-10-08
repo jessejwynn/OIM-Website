@@ -79,7 +79,7 @@ body {
         align-items: center;
         padding: 15px 0;
         width: 95%;
-        max-width: 1800px;
+        max-width:  auto;
         margin: 0 auto;
         z-index: 1001;
         transform: translateY(-100%);

@@ -3,7 +3,7 @@
 
 /* Vebro Hero Section */
 .vebro-hero {
-    height: 50vh; /* Half the height of the original hero */
+    height: 350px; /* Fixed height instead of viewport-relative */
     background: none; /* Remove background as we'll use carousel instead */
     padding: 30px 0; /* Adjust padding for shorter height */
     position: relative; /* Ensure positioning context */
@@ -246,6 +246,21 @@
     grid-auto-rows: min-content;
 }
 
+.products-grid .product-card h3{
+    text-align: center;
+    color: #4E3A02;
+    font-family: 'Lucida Sans Unicode', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+}
+
+.products-grid .product-card p {
+    text-align: center;
+    color: #4E3A02;
+    font-family: 'Lucida Sans Unicode', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    margin-top: 5px;
+}
+
 .product-card {
     background: rgba(247, 245, 236, 0.7);
     backdrop-filter: blur(5px);
@@ -325,7 +340,7 @@
     }
     
     .product-card h3 {
-        font-size: 1rem;
+        font-size: clamp(1rem, 2.5vw, 1.1rem);
     }
     
     .product-card p {
@@ -425,7 +440,7 @@
         font-family: 'Lucida Sans Unicode', sans-serif;
         left: 5%;
     }
-    #PU-Concrete {
+    #PU-concrete-image {
         width: 100%;
         max-width: clamp(800px, 50%, 1000px);
         height: 250px;
@@ -456,8 +471,9 @@
         height: 250px;
         border-radius: 10px;
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-        margin-top: 8%;
+        margin-top: 13%;
         right: 5%;
+        transition: transform .6s ease, opacity .6s ease;
     }
 
     #pu-vs-epoxy-desc {
@@ -498,9 +514,163 @@
         top: -320px;
         left: -20%;
     }
+
+    #vebro-vs-others .glass-card {
+        position: absolute;
+        /* inset: auto 24px -24px auto; */
+    }
+
+    #vebro-vs-others-image {
+        z-index: 0;
+        left: 5%;
+    }
+
+
+}
+
+@media (max-width: 1199px) {
+    #about-vebro-desc {
+        font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+        max-width: clamp(600px, 50%, 700px);
+        margin: 0 auto 20px auto;
+        text-align: center;
+        color: #4E3A02;
+        font-family: 'Lucida Sans Unicode', sans-serif;
+        top:45px;
+    }
     
+    #about-vebro-image-1 {
+      z-index: 0;
+      height: 280px;
+      top: 0px;
+      right: -30%;
+    }
 
+    .square-image-container{
+        top: 0px;
+        left:5%;
+    }
 
+    #pu-concrete-desc {
+        font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+        max-width: clamp(600px, 50%, 700px);
+        color: #4E3A02;
+        font-family: 'Lucida Sans Unicode', sans-serif;
+        left: 5%;
+    }
+
+    #PU-concrete-image {
+        width: 100%;
+        max-width: clamp(800px, 50%, 1000px);
+        height: 250px;
+        border-radius: 10px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        margin-top: -3%;
+        right:-22%;
+    }
+
+    #what-is-pu-concrete .content-wrapper {
+        position: relative;
+        min-height: 300px; 
+        max-height: 380px;
+        /* height: 250px; */
+    }
+
+    #PU-Comparison {
+        position: absolute;
+        width: 100%;
+        max-width: clamp(100px, 50%, 400px);
+        height: 250px;
+        border-radius: 10px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        margin-top: 8%;
+        left: 5%;
+    }
+    #Epoxy-Comparison {
+        width: 100%;
+        max-width: clamp(100px, 50%, 400px);
+        height: 250px;
+        border-radius: 10px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        margin-top: -50%;
+        right: -60%;
+        /* transition: transform .6s  ease-in-out, opacity .6s ease-in-out; */
+    }
+
+    #pu-vs-epoxy-desc {
+        font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+        max-width: clamp(600px, 50%, 700px);
+        margin: 0 auto 20px auto;
+        text-align: left;
+        color: #4E3A02;
+        font-family: 'Lucida Sans Unicode', sans-serif;
+        top: 90px;
+    }
+
+    #phthalate-free {
+        position: relative;
+        min-height: 300px; 
+        max-height: 580px;
+    }
+
+    #phthalates-desc {
+        max-width: clamp(600px, 50%, 700px);
+        color: #4E3A02;
+        font-family: 'Lucida Sans Unicode', sans-serif;
+        left:5%;
+    }
+
+    #phthalates-effects-image {
+        z-index: 0;
+        height: 300px;
+        bottom: 40px;
+        right: 5%;
+        top: 420px;
+    }
+
+    #health-concerns .glass-card {
+        min-width: 50px;
+        margin: 0 auto;
+        width: 20%;
+        top: -320px;
+        left: -20%;
+    }
+
+    #vebro-vs-others .glass-card {
+        position: absolute;
+        /* inset: auto 24px -24px auto; */
+    }
+
+    #vebro-vs-others-image {
+        z-index: 0;
+        left: 5%;
+    }
+}
+
+@media (max-width:768px) {
+    #about-vebro-desc {
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+        max-width: clamp(300px, 70%, 400px);
+        max-height: clamp(100px, 80%, 220px);
+        margin: 0 auto 20px auto;
+        text-align: center;
+        color: #4E3A02;
+        font-family: 'Lucida Sans Unicode', sans-serif;
+        top:45px;
+    } 
+
+    #about-vebro-image-1 {
+        position: absolute;
+        z-index: 0;
+        height: 200px;
+        bottom: -300px;
+        right: 0;
+    }
+
+    .square-image-container{
+        display: none;
+    }
+   
 }
 
 /* Square image container */
