@@ -1546,7 +1546,7 @@ body {
     .site-footer {
       background-color: #3E435A;
       color: white;
-      padding: 60px 40px;
+      padding: 40px 40px; /* Reduced padding from 60px to 40px */
       margin-top: 80px;
     }
 
@@ -1555,7 +1555,7 @@ body {
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
+      align-items: center; /* Changed from flex-start to center for better vertical alignment */
     }
 
     .footer-left {
@@ -1563,7 +1563,7 @@ body {
     }
 
     .footer-logo {
-      height: 120px;
+      height: 100px; 
       filter: brightness(0) invert(1);
       margin-left: 20px;
     }
@@ -1575,14 +1575,14 @@ body {
 
     .footer-middle h4 {
       font-family: 'Lucida Sans Unicode', sans-serif;
-      font-size: 1.4rem;
+      font-size: clamp(1.2rem, 2.5vw, 1.5rem);
       font-weight: lighter;
-      margin: 0 0 20px 0;
+      margin: 0 0 10px 0; /* Reduced margin-bottom from 20px to 10px */
       color: white;
     }
 
     .footer-middle p {
-      margin: 10px 0;
+      margin: 5px 0; /* Reduced from 10px to 5px */
       font-family: 'Lucida Sans Unicode', sans-serif;
       font-size: 0.9rem;
       color: rgba(255, 255, 255, 0.8);
@@ -1606,21 +1606,85 @@ body {
 
     @media (max-width: 768px) {
       .footer-content {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row; /* Keep horizontal layout */
+        flex-wrap: wrap; /* Allow wrapping if needed */
+        text-align: left;
+        gap: 10px; /* Reduce gap to fit better */
+        justify-content: space-between; /* Distribute space between items */
       }
 
-      .footer-left, .footer-middle, .footer-right {
-        margin-bottom: 30px;
-        text-align: center;
+      .footer-left {
+        flex: 0 0 auto; /* Fixed width for logo */
+        margin-bottom: 0;
       }
 
       .footer-middle {
-        padding: 20px 0;
+        flex: 1; /* Take available space in the middle */
+        text-align: left;
+        padding: 0 15px; /* Reduce padding */
+        min-width: 160px; /* Ensure minimal width for text */
       }
 
       .footer-right {
-        justify-content: center;
+        flex: 0 0 auto; /* Keep it on the same row */
+        justify-content: flex-end; /* Keep aligned to the right */
+        text-align: right;
+        margin-top: 0; /* Remove top margin */
+        align-self: center; /* Center vertically */
+      }
+
+      .footer-logo {
+        height: 80px;
+        margin-left: 0; /* Remove margin */
+      }
+
+      .site-footer {
+        padding: 30px 20px;
+      }
+
+      .copyright {
+        font-size: 0.8rem; /* Slightly smaller font */
+        color: rgba(255, 255, 255, 0.6);
+        margin: 0;
+        white-space: nowrap; /* Prevent text wrapping */
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .footer-content {
+        gap: 10px; /* Reduce gap further */
+      }
+      
+      .footer-left {
+        flex: 0 0 60px; /* Smaller fixed width for logo container */
+      }
+      
+      .footer-logo {
+        height: 60px; /* Make logo even smaller */
+      }
+      
+      .footer-middle {
+        flex: 1; /* Take remaining space */
+        padding: 0 8px; /* Reduce padding */
+        min-width: 140px; /* Ensure minimal width */
+      }
+      
+      .footer-middle h4 {
+        font-size: 1rem; /* Smaller heading */
+        margin-bottom: 5px; /* Less margin */
+      }
+      
+      .footer-middle p {
+        font-size: 0.75rem; /* Even smaller text */
+        margin: 2px 0; /* Less margin */
+      }
+      
+      .footer-right {
+        flex: 0 0 auto; /* Keep it as auto width */
+      }
+      
+      .copyright {
+        font-size: 0.7rem; /* Make copyright text smaller */
       }
     }
 
