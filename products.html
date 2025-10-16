@@ -3,73 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products - Optima</title>
+    <title>Catalogue - Optima</title>
     <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="stylesheet" href="/assets/css/products-styles.css">
+    <link rel="stylesheet" href="/assets/css/calendar.css">
+    <link rel="stylesheet" href="/assets/css/vebro-styles.css">
     <script src="/assets/js/menu.js"></script>
+    <script src="/assets/js/form-validation.js"></script>
+    <script src="/assets/js/carousel.js"></script>
+    <script src="/assets/js/optimized-scroll.js"></script>
 </head>
 <body>
-    <header>
-        <div class="logo">
+    <div class="floating-navbar">
+        <div class="logo" style="margin-left: 50px;">
             <a href="/">
                 <img src="/assets/images/optima-logo-nodesc.PNG" alt="Optima Logo">
             </a>
         </div>
-        <nav class="nav-format">
-            <a href="#" class="lang-switch">En</a>
-            <a href="/#contact">Contact</a>
-            <button class="menu-toggle" aria-label="Menu">
+        <nav class="nav-format" style="margin-right: 50px;">
+            <a href="#" class="lang-switch">Id</a>
+            <a href="#contact">Contact</a>
+            <button class="menu-toggle floating-menu-toggle" aria-label="Menu">
                 <span class="menu-line"></span>
                 <span class="menu-line"></span>
                 <span class="menu-line"></span>
             </button>
         </nav>
-    </header>
-    <div class="menu-overlay">
-        <div class="menu-content">
-            <div class="menu-items">
-                <a href="/#what-we-do">About Us</a>
-                <div class="menu-group">
-                    <span>Products</span>
-                    <a href="/vebro.html">Vebro</a>
-                    <a href="/products.html">Catalogue</a>
+        <div class="floating-menu-overlay">
+            <div class="menu-content">
+                <div class="menu-items">
+                    <a href="/#what-we-do">About Us</a>
+                    <div class="menu-group">
+                        <a href="/#our-imports" class="menu-group-header">Products</a>
+                        <a href="/products.html" target="_blank">Catalogue</a>
+                    </div>
+                    <a href="/#our-locations">Locations</a>
                 </div>
-                <a href="/#our-locations">Locations</a>
             </div>
         </div>
     </div>
-
-    <section class="products-hero">
+    <section class="hero vebro-hero">
+        <div class="carousel-container">
+            <div class="carousel-slide"></div>
+            <div class="carousel-slide"></div>
+            <div class="carousel-slide"></div>
+        </div>
+        <header>
+            <div class="logo">
+                <a href="/">
+                    <img src="/assets/images/optima-logo-nodesc.PNG" alt="Optima Logo">
+                </a>
+            </div>
+            <nav class="nav-format">
+                <a href="#" class="lang-switch">Id</a>
+                <a href="#contact">Contact</a>
+                <button class="menu-toggle" aria-label="Menu">
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                </button>
+            </nav>
+        </header>
+        <div class="menu-overlay">
+            <div class="menu-content">
+                <div class="menu-items">
+                    <a href="/#what-we-do">About Us</a>
+                    <div class="menu-group">
+                        <a href="#our-imports" class="menu-group-header">Products</a>
+                        <a href="/products.html" target="_blank">Catalogue</a>
+                    </div>
+                    <a href="/#our-locations">Locations</a>
+                </div>
+            </div>
+        </div>
         <div class="hero-content">
-            <h1>OUR PRODUCTS</h1>
-            <p>Comprehensive Solutions for Industry</p>
+            <div>
+                <h1>Product Catalogue</h1>
+                <!-- <p class="tagline"></p> -->
+            </div>
         </div>
     </section>
 
-    <section class="product-categories">
-        <h2>CATEGORIES</h2>
-        <div class="categories-grid">
-            <div class="category-card">
-                <h3>Heavy Machinery</h3>
-                <!-- Add category content -->
-            </div>
-            <div class="category-card">
-                <h3>Processing Machines</h3>
-                <!-- Add category content -->
-            </div>
-            <div class="category-card">
-                <h3>Safety Equipment</h3>
-                <!-- Add category content -->
-            </div>
-            <!-- Add more categories as needed -->
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>CONTACT US</h2>
-        <div class="contact-container">
-            <!-- Add your contact form here -->
-        </div>
-    </section>
-</body>
+    </body>
 </html>
