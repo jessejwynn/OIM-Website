@@ -524,14 +524,14 @@ body {
     .hero h1 {
       font-size: clamp(4rem, 6vw, 5rem);
       margin: 0;
-      font-family: 'Lucida Sans Unicode', sans-serif;
+      font-family: 'Lucida Sans Unicode', serif;
       font-weight: 300;
       letter-spacing: 5px;
       color: #f3ebdd;
     }
     .hero p.tagline {
       font-size: clamp(1.5rem, 3vw, 2rem);
-      font-family: 'Lucida Sans Unicode', sans-serif;
+      font-family: 'Lucida Sans Unicode', serif;
       margin: 1px 0 0 0;
       letter-spacing: 5px;
       color: #f3ebdd;
@@ -540,7 +540,7 @@ body {
       max-width: clamp(300px, 30vw, 400px);
       font-size: clamp(0.8rem, 2.5vw, 1.4rem);
       line-height: 1.6;
-      font-family: 'Lucida Sans Unicode', sans-serif;
+      font-family: 'Lucida Sans Unicode', serif;
       letter-spacing: 2px;
       color: #f3ebdd;
     }
@@ -608,6 +608,8 @@ body {
       border: 1px solid rgba(255, 255, 255, 0.2);
       z-index: 1;
     }
+
+  
 
     .glass-card p {
       font-size: clamp(1rem, 2.5vw, 1.2rem);
@@ -782,16 +784,16 @@ body {
 
     .subsection h3 {
       color: #4E3A02;
-      font-family: 'Lucida Sans Unicode', sans-serif;
-      font-size: 1.5rem;
+      font-family: 'Lucida Sans Unicode', serif;
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
       margin: 0;
       letter-spacing: 1px;
     }
 
     .subsection h4 {
       color: #4E3A02;
-      font-family: 'Lucida Sans Unicode', sans-serif;
-      font-size: 1.1rem;
+      font-family: 'Lucida Sans Unicode', serif;
+      font-size: clamp(1.2rem, 3vw, 1.5rem);
       margin: 5px 0 20px;
       font-weight: normal;
     }
@@ -837,7 +839,7 @@ body {
     .import-header {
       display: flex;
       justify-content: space-between;
-      background-color: #766c5d;
+      background-color: #383b49;
       padding: 30px 40px;
       padding-bottom: 200px;
       margin: 40px 0;
@@ -877,13 +879,18 @@ body {
     }
 
     .header-item h3 {
-      font-family: 'Lucida Sans Unicode', sans-serif;
-      font-size: clamp(1.3rem, 2.5vw, 2rem);
+      font-family: 'Lucida Sans Unicode', serif;
+      font-size: clamp(2rem, 2.5vw, 3rem);
       font-weight: normal;
       margin: 0;
-      margin-top:20px;
-      color: white;
+      margin-top:25px;
+      color: rgb(255, 250, 243);
     }
+    @media (min-width: 1200px) {
+    #header-item-1 h3 {
+      margin-top: 45px;
+    }
+  }
 
     @media (max-width: 768px) {
       .header-item h3 {
@@ -901,12 +908,13 @@ body {
 
 
     .catalog-button {
+      position: relative;
       background: transparent;
       border: 2px solid white;
       color: white;
       padding: 10px 25px;
       /* border-radius: 20px; */
-      margin-top: 10px;
+      top: 20px;
       font-family: 'Lucida Sans Unicode', sans-serif;
       cursor: pointer;
       transition: all 0.3s ease;
@@ -1307,7 +1315,7 @@ body {
     position: relative;
     flex: 0 0 100%;
     width: 100%;
-    background: url(../images/jkt-temp.jpg) center center/cover no-repeat;
+    background: url(../images/smg-temp.jpg) center center/cover no-repeat;
     counter-increment: item;
 }
 
@@ -1318,7 +1326,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0,0,0,0.4); /* Dark overlay to improve text visibility */
+    background: linear-gradient(to left, rgba(0,0,0,0.75) 50%, rgba(0,0,0,0.2) 100%); /* Dark gradient starting from right */
     z-index: 1;
 }
 
@@ -1327,7 +1335,7 @@ body {
     flex: 0 0 100%;
     width: 100%;
     /* You can set a different image for the second location if needed */
-    background: url(../images/temp-1.jpg) center center/cover no-repeat;
+    background: url(../images/jkt-temp.avif) center center/cover no-repeat;
     counter-increment: item;
 }
 
@@ -1338,7 +1346,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0,0,0,0.4);
+    background: linear-gradient(to left, rgba(0,0,0,0.75) 50%, rgba(0,0,0,0.2) 100%); /* Dark gradient starting from right */
     z-index: 1;
 }
 
@@ -1353,26 +1361,35 @@ body {
 }
 
 /* Add location content styling */
+
 .location-content {
-    position: relative;
-    color: white;
-    padding: 40px;
-    z-index: 3;
-    text-align: center;
+  position: relative;
+  color: white;
+  padding: 40px;
+  z-index: 3;
+  text-align: right;
+  right: 100px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
 }
 
+
 .location-content h3 {
-    font-family: 'Lucida Sans Unicode', sans-serif;
-    font-size: 2.5rem;
+    font-family: 'Lucida Sans Unicode', serif;
+    font-size: clamp(4.5rem, 3vw, 5.5rem);
     font-weight: normal;
     margin: 0 0 20px;
+    color:#f9f5ec;
 }
 
 .location-content .address {
-    font-family: 'Lucida Sans Unicode', sans-serif;
-    font-size: 1.2rem;
+    font-family: 'Lucida Sans Unicode', serif;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
     line-height: 1.6;
     margin: 0;
+    color:#f3ebdd;
 }
 
 /* Contact Form Styles */
