@@ -585,15 +585,86 @@ body {
     .section-image {
       position: absolute;
       width: 55%;
-      min-width: 600px;
-      max-width: 800px;
+      /* min-width: 600px; */
+      /* max-width: 800px; */
       height: 400px;
-      border-radius: 10px;
+      border-radius: 15px;
       object-fit: cover;
       right: 5%; /* Position from right */
       top: 50%; /* Center vertically */
       transform: translateY(-50%); /* Center vertically */
     }
+    
+    #what-we-do-image {
+      position: absolute;
+      width: 550px;
+      height: 350px;
+      border-radius: 15px;
+      object-fit: cover;
+      left: 250px; /* Position from right */
+      top: 320px; /* Center vertically */
+      transform: translateY(-50%); /* Center vertically */
+
+    }
+
+    #why-us-title {
+      position: absolute;
+      font-family: 'Lucida Sans Unicode', sans-serif;
+      font-size: clamp(2rem, 2.5vw, 3rem);
+      font-weight: 100;
+      margin: 0;
+      margin-top:25px;
+      color: #4e3a02c2;
+      right: 400px;
+      top: 25%;
+      text-shadow: 2px 2px #615c5044;
+    }
+
+    #why-us-section {
+      position: absolute;
+      width: 45%;
+      height: 500px;
+      right: 0;
+      top: 0;
+      margin-bottom: 40px;
+    }
+
+    #why-us-section h4 {
+      position: absolute;
+      font-family: 'Lucida Sans Unicode', sans-serif;
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 100;
+      margin: 0;
+      margin-top: 100px;
+      color: #4e3a02b1;
+      right: 150px;
+      top: 25%;
+      text-shadow: 2px 2px #615c5044;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #5c4e2ac0;
+      width: 450px;
+    }
+
+    #why-us-section h5 {
+      position: absolute;
+      font-family: 'Lucida Sans Unicode', sans-serif;
+      font-size: clamp(1rem, 2.5vw, 1.5rem);
+      font-weight: 100;
+      margin: 0;
+      margin-top: 170px;
+      color: #4e3a02b1;
+      right: 150px;
+      top: 25%;
+      text-shadow: 2px 2px #615c5044;
+      width: 450px;
+    }
+
+
+
+    
+
+
+    
 
     .glass-card {
       position: relative;
