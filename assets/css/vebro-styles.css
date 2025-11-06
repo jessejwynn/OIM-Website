@@ -4,8 +4,20 @@
 /* Vebro Hero Section */
 .vebro-hero {
     height: 350px; /* Fixed height instead of viewport-relative */
-    background: none; /* Remove background as we'll use carousel instead */
-    padding: 30px 0; /* Adjust padding for shorter height */
+    background: none; /* Remove background as we'll use carousel in.product-card {
+    background: rgba(247, 245, 236, 0.7);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    height: fit-content;
+    align-self: start;
+}adding: 30px 0; /* Adjust padding for shorter height */
     position: relative; /* Ensure positioning context */
     overflow: hidden; /* Contain the carousel slides */
     z-index: 1; /* Create stacking context */
@@ -238,12 +250,10 @@
 
 /* Products Grid Layout */
 .products-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    column-count: 3;
+    column-gap: 25px;
     width: clamp(800px, 90%, 1200px);
     margin: 0 auto;
-    grid-auto-rows: min-content;
     border-radius: 60px;
 }
 
@@ -274,7 +284,11 @@
     cursor: pointer;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
-
+    height: fit-content;
+    break-inside: avoid;
+    margin-bottom: 25px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .product-card:hover {
@@ -303,39 +317,84 @@
     transform: scale(1.05);
 }
 
+.product-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
 .product-card h3 {
     color: #333;
     font-family: 'Lucida Sans Unicode', sans-serif;
     font-size: 1.1rem;
-    margin: 0 0 8px 0;
+    margin: 0 0 10px 0;
     text-align: left;
     font-weight: bold;
+}
+
+.product-description {
+    flex: 1;
 }
 
 .product-card p {
     color: #333;
     font-family: 'Lucida Sans Unicode', sans-serif;
     font-size: 0.9rem;
-    margin: 0;
+    margin: 0 0 10px 0;
     text-align: left;
     line-height: 1.4;
 }
 
-/* Desktop layout: 3 columns, 2 rows */
+.description-preview {
+    display: block;
+}
+
+.description-full {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.description-full.show {
+    display: block;
+}
+
+.expand-btn {
+    background: none;
+    border: none;
+    color: #4E3A02;
+    font-family: 'Lucida Sans Unicode', sans-serif;
+    font-size: 0.8rem;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+    margin-top: auto;
+    text-align: left;
+    transition: color 0.3s ease;
+}
+
+.expand-btn:hover {
+    color: #2D2201;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Desktop layout: 3 columns */
 @media (min-width: 768px) {
     .products-grid {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, auto);
+        column-count: 3;
+        column-gap: 25px;
     }
 }
 
-/* Mobile layout: 2 columns, 3 rows */
+/* Mobile layout: 2 columns */
 @media (max-width: 768px) {
     .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, auto);
+        column-count: 2;
+        column-gap: 15px;
         max-width: 500px;
-        gap: 15px;
     }
     
     .product-image {
@@ -353,7 +412,7 @@
 
 @media (max-width: 480px) {
     .products-grid {
-        grid-template-columns: 1fr;
+        column-count: 1;
         max-width: 300px;
     }
 }
@@ -364,6 +423,7 @@
     max-width: 500px;
     margin: 0 auto 40px auto;
     width: 100%;
+    margin-top: 80px;
 }
 
 .search-container input[type="text"] {
@@ -391,12 +451,7 @@
 }
 
 .search-icon {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #4E3A02;
-    pointer-events: none;
+    display: none;
 }
 
 .no-results {

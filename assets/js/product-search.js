@@ -1,10 +1,42 @@
-// Product search functionality
+// Product search functionality and expand/collapse descriptions
 document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('product-search');
     const productCards = document.querySelectorAll('.product-card');
     const noResults = document.getElementById('no-results');
     
     if (!searchInput || !productCards.length) return;
+    
+    // Handle expand/collapse functionality
+    function initializeCardClicks() {
+        const productCards = document.querySelectorAll('.product-card');
+        
+        productCards.forEach(card => {
+            card.addEventListener('click', function(e) {
+                // Don't prevent default - we want the card to be clickable
+                
+                const preview = this.querySelector('.description-preview');
+                const fullDescription = this.querySelector('.description-full');
+                const expandBtn = this.querySelector('.expand-btn');
+                
+                if (fullDescription.style.display === 'none' || !fullDescription.style.display) {
+                    // Expand
+                    preview.style.display = 'none';
+                    fullDescription.style.display = 'block';
+                    fullDescription.classList.add('show');
+                    expandBtn.textContent = 'Read Less';
+                } else {
+                    // Collapse
+                    preview.style.display = 'block';
+                    fullDescription.style.display = 'none';
+                    fullDescription.classList.remove('show');
+                    expandBtn.textContent = 'Read More';
+                }
+            });
+        });
+    }
+    
+    // Initialize card clicks
+    initializeCardClicks();
     
     // Search function
     function filterProducts() {
