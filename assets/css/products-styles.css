@@ -1,0 +1,91 @@
+/* Products page specific styles */
+
+/* Navigation styles */
+.logo {
+    margin-left: 50px;
+}
+
+.nav-format {
+    margin-right: 50px;
+}
+
+/* Product description styles */
+.description-full {
+    display: none;
+}
+
+/* No results message styles */
+.no-results {
+    display: none;
+}
+
+#products-catalogue {
+    height:auto;
+}
+
+/* SIMPLE 3-COLUMN LAYOUT - No multi-column interference possible */
+.products-grid {
+    /* Kill any potential column properties */
+    column-count: unset !important;
+    columns: unset !important;
+    
+    /* Simple flexbox container for 3 columns */
+    display: flex !important;
+    gap: 25px !important;
+    width: clamp(800px, 90%, 1200px) !important;
+    margin: 0 auto !important;
+    border-radius: 60px !important;
+    align-items: flex-start !important;
+}
+
+/* Each column container */
+.products-column {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 25px !important;
+}
+
+/* Product cards within columns */
+.products-column .product-card {
+    /* Visual properties from vebro-styles.css */
+    background: rgba(247, 245, 236, 0.7) !important;
+    backdrop-filter: blur(5px) !important;
+    -webkit-backdrop-filter: blur(5px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    padding: 30px !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    cursor: pointer !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 20px !important;
+    box-sizing: border-box !important;
+    
+    /* Layout properties */
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    height: fit-content !important;
+    margin: 0 !important;
+}
+
+.products-column .product-card:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 1024px) {
+    .products-grid {
+        flex-direction: column !important;
+    }
+    
+    .products-column {
+        width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .products-grid {
+        flex-direction: column !important;
+    }
+}
