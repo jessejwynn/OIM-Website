@@ -1755,6 +1755,45 @@ body {
       transform: translateY(-2px);
     }
 
+    /* Email Us Link Styles */
+    .email-link-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .or-text {
+      font-family: 'Lucida Sans Unicode', sans-serif;
+      color: #4E3A02;
+      font-size: 1rem;
+      margin: 10px 0;
+      opacity: 0.7;
+    }
+
+    .email-us-link {
+      display: inline-block;
+      background-color: #6b6e87; /* Lighter version of #33365d */
+      color: #f7f0e3;
+      text-decoration: none;
+      font-family: 'Lucida Sans Unicode', sans-serif;
+      font-size: 1.1rem;
+      padding: 15px 40px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: auto;
+      margin: 20px 0;
+    }
+
+    .email-us-link:hover {
+      background-color: #5a5d78; /* Darker shade on hover */
+      transform: translateY(-2px);
+    }
+
+    .email-us-link:active {
+      transform: translateY(0);
+    }
+
     @media (max-width: 1200px) {
       .form-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1768,6 +1807,20 @@ body {
 
       #contact {
         padding: 60px 20px;
+      }
+
+      .submit-button {
+        display: block;
+        margin: 20px auto;
+      }
+
+      .email-us-link {
+        font-size: 1.1rem;
+        padding: 15px 40px;
+      }
+
+      .or-text {
+        font-size: 0.9rem;
       }
     }
 
