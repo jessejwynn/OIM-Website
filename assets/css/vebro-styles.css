@@ -3,7 +3,8 @@
 
 /* Vebro Hero Section */
 .vebro-hero {
-    height: 350px; /* Fixed height instead of viewport-relative */
+    min-height:450px;
+    max-height: 550px; 
     background: none; /* Remove background as we'll use carousel in.product-card {
     background: rgba(247, 245, 236, 0.7);
     backdrop-filter: blur(5px);
@@ -989,4 +990,12 @@
     #calc-root table {
         font-size: 12px !important;
     }
+}
+
+
+/* mobile */
+@media (max-width:  575px){
+
+    
+
 }

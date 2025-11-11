@@ -1747,7 +1747,8 @@ body {
       transition: all 0.3s ease;
       border-radius: 5px;
       width: auto;
-      margin: 20px 0;
+      margin: 20px auto;
+      display: block;
     }
 
     .submit-button:hover {
@@ -1807,11 +1808,6 @@ body {
 
       #contact {
         padding: 60px 20px;
-      }
-
-      .submit-button {
-        display: block;
-        margin: 20px auto;
       }
 
       .email-us-link {
@@ -2068,6 +2064,165 @@ body {
         background-color: white;
         transform: scale(1.2);
         box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    }
+
+    /* Form Submission Popup Styles */
+    .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 2000;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .popup-overlay.show {
+        opacity: 1;
+    }
+
+    .popup-modal {
+        background: linear-gradient(135deg, #f9eac3, #ece4c8);
+        border-radius: 15px;
+        padding: 40px;
+        max-width: 500px;
+        width: 90%;
+        text-align: center;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        border: 2px solid rgba(78, 58, 2, 0.1);
+        position: relative;
+        transform: scale(0.8);
+        transition: transform 0.3s ease;
+    }
+
+    .popup-modal.show {
+        transform: scale(1);
+    }
+
+    .popup-close {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        background: none;
+        border: none;
+        font-size: 28px;
+        color: #4E3A02;
+        cursor: pointer;
+        padding: 5px;
+        line-height: 1;
+        transition: opacity 0.3s ease;
+    }
+
+    .popup-close:hover {
+        opacity: 0.7;
+    }
+
+    .popup-icon {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 20px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+    }
+
+    .success-icon {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    .error-icon {
+        background-color: #f44336;
+        color: white;
+    }
+
+    .popup-title {
+        font-family: 'Lucida Sans Unicode', sans-serif;
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        color: #4E3A02;
+        margin: 0 0 15px 0;
+        font-weight: lighter;
+    }
+
+    .popup-message {
+        font-family: 'Lucida Sans Unicode', sans-serif;
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+        color: #4E3A02;
+        line-height: 1.5;
+        margin: 0 0 25px 0;
+        opacity: 0.8;
+    }
+
+    .popup-button {
+        background-color: #33365d;
+        color: #f7f0e3;
+        border: none;
+        padding: 12px 30px;
+        font-family: 'Lucida Sans Unicode', sans-serif;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+
+    .popup-button:hover {
+        background-color: #333246;
+        transform: translateY(-2px);
+    }
+
+    /* Responsive popup styles */
+    @media (max-width: 768px) {
+        .popup-modal {
+            padding: 30px;
+            margin: 20px;
+        }
+
+        .popup-icon {
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .popup-title {
+            font-size: clamp(1.3rem, 5vw, 1.8rem);
+        }
+
+        .popup-message {
+            font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+        }
+
+        .popup-close {
+            font-size: 24px;
+            top: 12px;
+            right: 15px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .popup-modal {
+            padding: 25px;
+            margin: 15px;
+        }
+
+        .popup-icon {
+            width: 45px;
+            height: 45px;
+            font-size: 20px;
+        }
+
+        .popup-button {
+            padding: 10px 25px;
+            font-size: 0.9rem;
+        }
     }
 
 
