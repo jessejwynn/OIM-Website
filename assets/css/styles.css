@@ -1426,6 +1426,15 @@ body {
       color: rgba(255, 255, 255, 0.8);
     }
 
+    /* Ensure location arrows are properly centered on desktop */
+    .location-arrow.carousel__prev {
+      transform: translateY(-50%) !important;
+    }
+
+    .location-arrow.carousel__next {
+      transform: translateY(-50%) scaleX(-1) !important;
+    }
+
     .carousel-section {
         position: relative;
         width: 100%;
@@ -1750,6 +1759,19 @@ body {
         right: 10px;
         transform: translateY(-50%) scaleX(-1) !important;
     }
+
+    /* Location arrows positioning for tablet */
+    .location-arrow {
+        top: 65% !important;
+    }
+
+    .location-arrow.carousel__prev {
+        transform: translateY(-50%) !important;
+    }
+
+    .location-arrow.carousel__next {
+        transform: translateY(-50%) scaleX(-1) !important;
+    }
     
     .locations-container {
         height: 550px;
@@ -1802,6 +1824,19 @@ body {
 
     .carousel__next.carousel__arrow {
         right: 8px;
+        transform: translateY(-50%) scaleX(-1) !important;
+    }
+
+    /* Location arrows positioning for mobile */
+    .location-arrow {
+        top: 70% !important;
+    }
+
+    .location-arrow.carousel__prev {
+        transform: translateY(-50%) !important;
+    }
+
+    .location-arrow.carousel__next {
         transform: translateY(-50%) scaleX(-1) !important;
     }
 }
