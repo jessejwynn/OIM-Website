@@ -1,6 +1,7 @@
 // Google Maps initialization for location carousel
 let maps = {};
 let markers = {};
+let mapsInitialized = false;
 
 // Office locations with coordinates
 const locations = {
@@ -20,11 +21,60 @@ const locations = {
 
 // Initialize maps when Google Maps API is loaded
 function initMaps() {
-    // Initialize Semarang map
-    initializeMap('semarang', 'map-semarang');
+    console.log('initMaps called');
     
-    // Initialize Jakarta map
-    initializeMap('jakarta', 'map-jakarta');
+    // Check if Google Maps is available
+    if (typeof google === 'undefined' || !google.maps) {
+        console.error('Google Maps API not loaded');
+        showMapFallback();
+        return;
+    }
+    
+    try {
+        // Initialize Semarang map
+        initializeMap('semarang', 'map-semarang');
+        
+        // Initialize Jakarta map
+        initializeMap('jakarta', 'map-jakarta');
+        
+        mapsInitialized = true;
+        console.log('Maps initialized successfully');
+    } catch (error) {
+        console.error('Error initializing maps:', error);
+        showMapFallback();
+    }
+}
+
+// Fallback function when maps fail to load
+function showMapFallback() {
+    console.log('Showing map fallback');
+    const mapElements = ['map-semarang', 'map-jakarta'];
+    
+    mapElements.forEach(elementId => {
+        const element = document.getElementById(elementId);
+        if (element) {
+            element.innerHTML = `
+                <div style="
+                    width: 100%; 
+                    height: 100%; 
+                    background: linear-gradient(135deg, #4E3A02, #6B5404);
+                    display: flex; 
+                    align-items: center; 
+                    justify-content: center;
+                    color: white;
+                    text-align: center;
+                    font-family: 'Lucida Sans Unicode', sans-serif;
+                    border-radius: 10px;
+                ">
+                    <div>
+                        <div style="font-size: 2rem; margin-bottom: 10px;">📍</div>
+                        <div style="font-size: 1rem;">Interactive Map</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Loading...</div>
+                    </div>
+                </div>
+            `;
+        }
+    });
 }
 
 function initializeMap(locationKey, mapElementId) {
