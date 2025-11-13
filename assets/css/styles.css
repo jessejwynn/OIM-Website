@@ -1672,6 +1672,10 @@ body {
         font-size: clamp(0.8rem, 2.2vw, 1rem);
         min-width: 100px;
     }
+    
+    .locations-container {
+        height: 550px;
+    }
 }
 
 @media (max-width: 480px) {
