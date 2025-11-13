@@ -614,15 +614,14 @@ body {
     }
 
     section {
-      padding: 20px 40px; /* Significantly reduced top/bottom padding */
+      padding: 60px 40px; /* Significantly reduced top/bottom padding */
       max-width: 95%;
       margin: auto;
     }
     
     #what-we-do {
       position: relative;
-      padding-bottom: 0; /* Remove bottom padding */
-      margin-bottom: 0; /* Remove bottom margin */
+      padding-bottom: 0px;/* Remove bottom margin */
     }
 
     #what-we-do h2 {
@@ -647,8 +646,8 @@ body {
     .content-wrapper {
       position: relative;
       width: 100%;
-      height: 320px; /* Further reduced height */
-      margin-bottom: 0; /* Remove bottom margin */
+      height: 500px;
+      margin-bottom: 40px;
     }
 
     .section-image {
@@ -683,7 +682,7 @@ body {
       max-width: 550px;
       min-height: 450px;
       right: 30px;
-      top: 60px; /* Moved much higher to eliminate gap */
+      top: 180px; /* Moved much higher to eliminate gap */
       background: rgba(255, 255, 255, 0.03);
       border-radius: 16px;
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.063);
@@ -2019,35 +2018,6 @@ body {
 
 
     /* Responsive Design for why-us-section */
-    
-    /* Large Desktop (1400px+) */
-    @media (min-width: 1400px) {
-      #why-us-section {
-        max-width: 600px;
-        right: 50px;
-        top: 40px; /* Much higher to eliminate gap */
-        padding: 40px;
-      }
-      
-      .content-wrapper {
-        height: 350px; /* Reduced height */
-      }
-      
-      #why-us-title {
-        font-size: clamp(3.5rem, 3vw, 4.5rem);
-        width: 500px;
-      }
-      
-      #why-us-section h4 {
-        width: 500px;
-        font-size: clamp(2rem, 2.8vw, 2.5rem);
-      }
-      
-      #why-us-section h5 {
-        width: 500px;
-        font-size: clamp(1.3rem, 2.2vw, 1.8rem);
-      }
-    }
     
     /* Desktop (1200px - 1399px) */
     @media (max-width: 1399px) and (min-width: 1200px) {
