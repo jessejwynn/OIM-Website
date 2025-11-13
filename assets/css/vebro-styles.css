@@ -566,6 +566,10 @@
         bottom: 40px;
         right: 5%;
         top: 420px;
+        background-color: #fff7ef;
+        object-fit: contain;
+        border-radius: 10px;
+        padding: 10px;
     }
 
     #health-concerns .glass-card {
@@ -690,6 +694,10 @@
         /* bottom: 40px; */
         right: 5%;
         top: 250px;
+        background-color: #fff7ef;
+        object-fit: contain;
+        border-radius: 10px;
+        padding: 10px;
     }
 
     #health-concerns .glass-card {
@@ -813,7 +821,18 @@
     }
 
     #phthalates-effects-image {
-        display: none;
+        position: relative;
+        width: 90%;
+        height: 200px;
+        margin: 20px auto;
+        left: auto;
+        right: auto;
+        top: auto;
+        background-color: #fff7ef;
+        object-fit: contain;
+        border-radius: 10px;
+        padding: 10px;
+        display: block;
     }
 
     #health-concerns .glass-card {
