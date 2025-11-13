@@ -614,7 +614,7 @@ body {
     }
 
     section {
-      padding: 20px 40px; /* Significantly reduced top/bottom padding */
+      padding: 60px 40px; /* Significantly reduced top/bottom padding */
       max-width: 95%;
       margin: auto;
     }
@@ -647,8 +647,8 @@ body {
     .content-wrapper {
       position: relative;
       width: 100%;
-      height: 320px; /* Further reduced height */
-      margin-bottom: 0; /* Remove bottom margin */
+      height: 500px; 
+      margin-bottom: 0;
     }
 
     .section-image {
@@ -683,7 +683,7 @@ body {
       max-width: 550px;
       min-height: 450px;
       right: 30px;
-      top: 60px; /* Moved much higher to eliminate gap */
+      top: 180px; 
       background: rgba(255, 255, 255, 0.03);
       border-radius: 16px;
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.063);
