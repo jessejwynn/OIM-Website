@@ -1218,22 +1218,19 @@ body {
       position: relative;
       flex: 0 0 100%;
       width: 100%;
-      background-color: rgb(219, 249, 225);
       counter-increment: item;
     }
     
-    .carousel__slide:nth-child(even) {
-      background-color: rgb(255, 255, 139);
+    .carousel__slide:nth-child(1) {
+      background: url(../images/forklift.avif) center center/cover no-repeat;
     }
     
-    .carousel__slide:before {
-      content: counter(item);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate3d(-50%,-40%,70px);
-      color: #fff;
-      font-size: 2em;
+    .carousel__slide:nth-child(2) {
+      background: url(../images/wood-machine.avif) center center/cover no-repeat;
+    }
+    
+    .carousel__slide:nth-child(3) {
+      background: url(../images/temp-other-products.avif) center center/cover no-repeat;
     }
     
     .carousel__snapper {
