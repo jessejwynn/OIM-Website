@@ -9,6 +9,8 @@
     <script src="./assets/js/form-validation.js"></script>
     <script src="./assets/js/menu.js"></script>
     <script src="./assets/js/optimized-scroll.js"></script>
+    <script src="./assets/js/maps-debug.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsY2ed-Ozmbyt2YiNkyakNAM3pYyrruaY&callback=initMaps"></script>
 
 </head>
 
@@ -246,9 +248,14 @@
                             tabindex="0"
                             class="carousel__location1">
                           <div class="carousel__snapper">
+                            <div class="location-map" id="map-semarang"></div>
                             <div class="location-content">
                               <h3>Semarang</h3>
                               <p class="address">Jl. Proft Dr Hamka Ngaliyan Square No.42 <br>Ngaliyan Kota Semarang</p>
+                              <div class="location-buttons">
+                                <a href="https://maps.google.com/maps?q=Jl.+Proft+Dr+Hamka+Ngaliyan+Square+No.42+Ngaliyan+Kota+Semarang" target="_blank" class="location-button directions-button">Get Directions</a>
+                                <a href="https://wa.me/+6281225398580?text=Hello%20Optima!%20I%20would%20like%20to%20contact%20your%20Semarang%20office." target="_blank" class="location-button contact-button">Contact Office</a>
+                              </div>
                             </div>
                             <a href="#carousel__location2"
                                class="carousel__prev">Go to last slide</a>
@@ -259,10 +266,17 @@
                         <li id="carousel__location2"
                             tabindex="0"
                             class="carousel__location2">
-                          <div class="carousel__snapper"></div>
+                          <div class="carousel__snapper">
+                            <div class="location-map" id="map-jakarta"></div>
+                          </div>
                           <div class="location-content">
                             <h3>Jakarta</h3>
                             <p class="address">Ruko Niaga Grisenda <br> Jl. Kapuk Raya Blok GE No.40, Kapuk Muara <br>Jakarta Utara</p>
+                            <div class="location-buttons">
+                              <a href="https://maps.google.com/maps?q=Ruko+Niaga+Grisenda+Jl.+Kapuk+Raya+Blok+GE+No.40+Kapuk+Muara+Jakarta+Utara" target="_blank" class="location-button directions-button">Get Directions</a>
+                              <a href="https://wa.me/+6281225398580?text=Hello%20Optima!%20I%20would%20like%20to%20contact%20your%20Jakarta%20office." target="_blank" class="location-button contact-button">Contact Office</a>
+                            </div>
+                          </div>
                           <a href="#carousel__location1"
                              class="carousel__prev">Go to previous slide</a>
                           <a href="#carousel__location1"
