@@ -1292,9 +1292,12 @@ body {
       cursor: pointer;
       margin: 0 8px; /* Add space between dots */
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add shadow for better visibility */
+      padding: 0;
+      outline: none;
     }
     
     /* Style for the active navigation dot */
+    .carousel__navigation-button.active,
     .carousel__navigation-button:target {
       background-color: white; /* Solid white for active state */
       transform: scale(1.2); /* Slightly larger */
@@ -1306,6 +1309,10 @@ body {
     .carousel__navigation-button:hover {
       background-color: white;
       transform: scale(1.1);
+    }
+
+    .carousel__navigation-button:focus {
+      outline: none;
     }
     
     
@@ -1355,6 +1362,68 @@ body {
     
     .carousel::after {
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
+    }
+
+    /* Arrow Navigation Styles */
+    .carousel__arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: auto;
+      height: auto;
+      background-color: transparent;
+      border: none;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      z-index: 15;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      user-select: none;
+      cursor: pointer;
+      padding: 0;
+      margin: 0;
+      font-family: inherit;
+      outline: none;
+    }
+
+    .carousel__arrow:focus {
+      outline: none;
+    }
+
+    .carousel__arrow:hover {
+      color: rgba(255, 255, 255, 0.8);
+      text-shadow: 0 3px 6px rgba(0, 0, 0, 0.7);
+    }
+
+    .carousel__prev.carousel__arrow:hover {
+      transform: translateY(-50%) scale(1.2);
+    }
+
+    .carousel__next.carousel__arrow:hover {
+      transform: translateY(-50%) scaleX(-1) scale(1.2) !important;
+    }
+
+    .carousel__prev.carousel__arrow {
+      left: 15px;
+    }
+
+    .carousel__next.carousel__arrow {
+      right: 15px;
+      transform: translateY(-50%) scaleX(-1) !important;
+    }
+
+    /* Location carousel specific arrow styling */
+    .location-arrow {
+      color: white;
+    }
+
+    .location-arrow:hover {
+      color: rgba(255, 255, 255, 0.8);
     }
 
     .carousel-section {
@@ -1666,8 +1735,20 @@ body {
     
     .location-button {
         padding: 8px 16px;
-        font-size: clamp(0.8rem, 2.2vw, 1rem);
-        min-width: 100px;
+    }
+
+    /* Responsive carousel arrows */
+    .carousel__arrow {
+        font-size: 35px;
+    }
+
+    .carousel__prev.carousel__arrow {
+        left: 10px;
+    }
+
+    .carousel__next.carousel__arrow {
+        right: 10px;
+        transform: translateY(-50%) scaleX(-1) !important;
     }
     
     .locations-container {
@@ -1708,6 +1789,20 @@ body {
         padding: 8px 12px;
         font-size: clamp(0.75rem, 3vw, 0.9rem);
         min-width: 90px;
+    }
+
+    /* Mobile carousel arrows */
+    .carousel__arrow {
+        font-size: 30px;
+    }
+
+    .carousel__prev.carousel__arrow {
+        left: 8px;
+    }
+
+    .carousel__next.carousel__arrow {
+        right: 8px;
+        transform: translateY(-50%) scaleX(-1) !important;
     }
 }
 

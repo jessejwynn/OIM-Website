@@ -21,86 +21,85 @@ document.addEventListener('DOMContentLoaded', function() {
             setInterval(nextVebroSlide, 5000); // Change slides every 5 seconds
         }
     }
-    
-    // Get all carousels on the page
-    const carousels = document.querySelectorAll('.carousel');
-    
-    carousels.forEach(function(carousel) {
-        const slides = carousel.querySelectorAll('.carousel__location1, .carousel__location2');
-        const dots = carousel.querySelectorAll('.carousel__navigation-button');
+
+    // Main carousel navigation handler
+    function initCarousel(carouselSelector, slideSelector) {
+        const carousel = document.querySelector(carouselSelector);
+        if (!carousel) return;
+
+        const slides = carousel.querySelectorAll(slideSelector);
+        const viewport = carousel.querySelector('.carousel__viewport');
+        if (!slides.length || !viewport) return;
+
         let currentIndex = 0;
-        
-        // Function to update active dot styling
-        function updateActiveDot() {
+
+        // Function to navigate to specific slide
+        function goToSlide(index) {
+            if (index < 0 || index >= slides.length) return;
+            
+            currentIndex = index;
+            const targetSlide = slides[index];
+            
+            // Smooth scroll to the target slide
+            targetSlide.scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest',
+                inline: 'start'
+            });
+
+            // Update navigation dots if they exist
+            updateNavigationDots();
+        }
+
+        // Function to update navigation dots
+        function updateNavigationDots() {
+            const dots = carousel.querySelectorAll('.carousel__navigation-button');
             dots.forEach((dot, index) => {
-                // Remove any previous active class or styling
-                dot.classList.remove('active');
-                
-                // Add active class to current dot
                 if (index === currentIndex) {
                     dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
                 }
             });
         }
-        
-        // Attach click handlers to dots
+
+        // Handle arrow navigation
+        const arrows = carousel.querySelectorAll('.carousel__arrow');
+        arrows.forEach(arrow => {
+            arrow.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                if (arrow.classList.contains('carousel__prev')) {
+                    if (currentIndex > 0) {
+                        goToSlide(currentIndex - 1);
+                    }
+                } else if (arrow.classList.contains('carousel__next')) {
+                    if (currentIndex < slides.length - 1) {
+                        goToSlide(currentIndex + 1);
+                    }
+                }
+            });
+        });
+
+        // Handle dot navigation
+        const dots = carousel.querySelectorAll('.carousel__navigation-button');
         dots.forEach((dot, index) => {
             dot.addEventListener('click', function(e) {
-                e.preventDefault(); // Prevent default hash navigation
-                
-                // Update current index
-                currentIndex = index;
-                
-                // Update active dot
-                updateActiveDot();
-                
-                // Prevent page from scrolling to top
-                window.scrollTo(window.scrollX, window.scrollY);
-                
-                // Remove any added hash from URL
-                if (history.pushState) {
-                    history.pushState('', document.title, window.location.pathname + window.location.search);
-                }
-                
-                // Scroll carousel to the corresponding slide using scrollIntoView
-                if (slides[index]) {
-                    slides[index].scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'nearest',
-                        inline: 'start'
-                    });
-                }
-            });
-        });
-        
-        // Initialize active dot
-        updateActiveDot();
-    });
-    
-    // Add special handling for location carousel if it exists
-    const locationSlides = document.querySelectorAll('.location-slide');
-    const locationDots = document.querySelectorAll('.nav-dot');
-    
-    if (locationSlides.length > 0 && locationDots.length > 0) {
-        locationDots.forEach((dot, index) => {
-            dot.addEventListener('click', function(e) {
-                // Hide all slides
-                locationSlides.forEach(slide => {
-                    slide.style.display = 'none';
-                    slide.classList.remove('active');
-                });
-                
-                // Show selected slide
-                locationSlides[index].style.display = 'block';
-                locationSlides[index].classList.add('active');
-                
-                // Update dot styling
-                locationDots.forEach(d => d.classList.remove('active'));
-                dot.classList.add('active');
-                
-                // Prevent default behavior
                 e.preventDefault();
+                e.stopPropagation();
+                goToSlide(index);
             });
         });
+
+        // Initialize
+        updateNavigationDots();
     }
+
+    // Initialize product carousel
+    initCarousel('.portrait-carousel', '.carousel__slide');
+    
+    // Initialize location carousel
+    initCarousel('.locations-container .portrait-carousel', '.carousel__location1, .carousel__location2');
+
 });
