@@ -82,6 +82,8 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
+
+
         // Handle dot navigation
         const dots = carousel.querySelectorAll('.carousel__navigation-button');
         dots.forEach((dot, index) => {

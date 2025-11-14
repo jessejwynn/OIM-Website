@@ -1104,6 +1104,7 @@ body {
         flex-direction: column;
         gap: 20px;
         padding: 20px;
+        padding-bottom: 120px;
       }
 
       .header-item {
@@ -1231,6 +1232,16 @@ body {
     
     .carousel__slide:nth-child(3) {
       background: url(../images/temp-other-products.avif) center center/cover no-repeat;
+    }
+
+    /* Carousel slide text styling */
+    .carousel__slide-text {
+      display: none; /* Hidden by default on desktop */
+    }
+
+    /* Mobile catalog button - hidden on desktop */
+    .mobile-catalog-container {
+      display: none;
     }
     
     .carousel__snapper {
@@ -1749,6 +1760,7 @@ body {
     /* Responsive carousel arrows */
     .carousel__arrow {
         font-size: 35px;
+        z-index: 10;
     }
 
     .carousel__prev.carousel__arrow {
@@ -1772,7 +1784,77 @@ body {
     .location-arrow.carousel__next {
         transform: translateY(-50%) scaleX(-1) !important;
     }
-    
+
+    /* Mobile carousel slide text */
+    .carousel__slide-text {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        font-family: 'Lucida Sans Unicode', sans-serif;
+        font-size: clamp(1.2rem, 4vw, 1.8rem);
+        font-weight: normal;
+        text-align: center;
+        z-index: 5;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    /* Show mobile catalog button */
+    .mobile-catalog-container {
+        display: flex !important;
+        justify-content: center;
+        margin-bottom: 0px;
+    }
+
+    .mobile-catalog-button {
+        background-color: #b3b3b7;
+        border: 2px solid #ffffff;
+        color: white;
+        padding: 12px 30px;
+        font-family: 'Lucida Sans Unicode', sans-serif;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.9rem;
+        border-radius: 4px;
+        font-weight: bold;
+    }
+
+    .mobile-catalog-button:hover {
+        background-color: #3a3a3a;
+        border-color: #3a3a3a;
+        color: white;
+    }
+
+    .import-header {
+      margin-top: 0px;
+      max-height: clamp(50px, 30vh, 100px);
+    }
+    /* Hide desktop text labels on mobile */
+    .import-header .header-item h3 {
+        display: none;
+    }
+
+    .import-header .header-item:nth-child(2) {
+        display: none;
+    }
+
+    .import-header .header-item:last-child {
+        display: none;
+    }
+
+    .portrait-container {
+        top: 0px;
+    }
+
     .locations-container {
         height: 550px;
     }
@@ -2633,12 +2715,14 @@ body {
         max-width: 98%;
         width: 98%;
         right: auto;
-        top: auto;
+        top: -100px;
         margin: 8px auto;
+        margin-bottom: -150px;
         padding: 20px;
         min-height: auto;
         left: 50%;
         transform: translateX(-50%);
+        z-index: 100;
       }
       
       #why-us-title {
@@ -2689,13 +2773,15 @@ body {
         max-width: 98%;
         width: 98%;
         right: auto;
-        top: auto;
+        top: -150px;
         margin: 5px auto;
+        margin-bottom: -200px;
         padding: 15px;
         min-height: auto;
         max-height: none;
         left: 50%;
         transform: translateX(-50%);
+        z-index: 100;
       }
       
       #why-us-title {
