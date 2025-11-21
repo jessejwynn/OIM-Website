@@ -999,7 +999,13 @@
 }
 
 
-
+#calculator-glass-card {
+        min-width: unset !important;
+        width: calc(100% - 40px) !important;
+        max-width: 90% !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+    }
 
 /* Calculator responsive design */
 
@@ -1013,13 +1019,7 @@
     box-sizing: border-box;
     }
 
-    #calculator-glass-card {
-        min-width: unset !important;
-        width: calc(100% - 40px) !important;
-        max-width: 90% !important;
-        margin: 0 auto !important;
-        box-sizing: border-box !important;
-    }
+    
     
     
 }
