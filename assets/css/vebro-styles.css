@@ -251,9 +251,9 @@
 /* Products Grid Layout */
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 25px;
-    width: clamp(800px, 90%, 1200px);
+    width: clamp(800px, 90%, 1400px);
     margin: 0 auto;
     grid-auto-rows: min-content;
     border-radius: 60px;
@@ -333,10 +333,10 @@
     line-height: 1.4;
 }
 
-/* Desktop layout: 3 columns, 2 rows */
+/* Desktop layout: 4 columns, 2 rows */
 @media (min-width: 768px) {
     .products-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(2, auto);
     }
 }
