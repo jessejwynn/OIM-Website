@@ -475,6 +475,11 @@
     display: none;
 }
 
+/* Hide mobile comparison image on all screens by default */
+img#pu-vs-epoxy-mobile.section-image {
+    display: none !important;
+}
+
 
 /* DIFFERENT SCREEN SIZES */
 @media (min-width: 1200px) {
@@ -528,7 +533,7 @@
 
     #PU-Comparison {
         width: 100%;
-        max-width: clamp(100px, 50%, 400px);
+        max-width: clamp(100px, 50%, 500px) !important;
         height: 250px;
         border-radius: 10px;
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
@@ -537,22 +542,27 @@
     }
     #Epoxy-Comparison {
         width: 100%;
-        max-width: clamp(100px, 50%, 400px);
+        max-width: clamp(100px, 50%, 500px) !important;
         height: 250px;
         border-radius: 10px;
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-        margin-top: 13%;
+        margin-top: 180px;
         right: 5%;
     }
 
     #pu-vs-epoxy-desc {
         font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-        max-width: clamp(500px, 85%, 700px);
+        width: clamp(350px, 60%, 600px) !important;
+        max-width: clamp(350px, 60%, 600px) !important;
+        flex-shrink: 0 !important;
         margin: 0 auto 20px auto;
         text-align: center;
         color: #4E3A02;
         font-family: 'Lucida Sans Unicode', sans-serif;
-        top: 90px;
+        top: 27%;
+
+
+       
     }
 
     #phthalate-free {
@@ -628,7 +638,7 @@
 
     #pu-concrete-desc {
         font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-        max-width: clamp(600px, 50%, 700px);
+        max-width: clamp(800px, 80%, 1000px);
         color: #4E3A02;
         font-family: 'Lucida Sans Unicode', sans-serif;
         left: 5%;
@@ -641,7 +651,7 @@
         height: 250px;
         border-radius: 10px;
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-        margin-top: -5%;
+        margin-top: -150px;
         right: 5%;
     }
 
@@ -664,7 +674,7 @@
     #PU-Comparison {
         position: absolute;
         width: 100%;
-        max-width: clamp(100px, 50%, 400px);
+        max-width: clamp(100px, 50%, 500px) !important;
         height: 250px;
         border-radius: 10px;
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
@@ -673,24 +683,25 @@
     }
     #Epoxy-Comparison {
         position: absolute;
-        width: clamp(100px, 45%, 400px);
-        max-width: clamp(100px, 45%, 400px);
+        max-width: clamp(100px, 50%, 500px) !important;
         height: 250px;
         border-radius: 10px;
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-        margin-top: -21%;
+        margin-top: -250px;
         right: 5%;
         /* transition: transform .6s  ease-in-out, opacity .6s ease-in-out; */
     }
 
     #pu-vs-epoxy-desc {
         font-size: clamp(1.0rem, 2.5vw, 1.3rem);
-        max-width: clamp(350px, 80%, 500px);
+        width: clamp(350px, 60%, 600px) !important;
+        max-width: clamp(350px, 60%, 600px) !important;
+        flex-shrink: 0 !important;
         margin: 0 auto 20px auto;
         text-align: center;
         color: #4E3A02;
         font-family: 'Lucida Sans Unicode', sans-serif;
-        top: 25%;
+        top: 31%;
     }
 
     #phthalate-free {
@@ -776,7 +787,7 @@
     }
 
     #Epoxy-Comparison {
-        margin-top: -27%;
+        margin-top: -250px;
         right: 5%;
     }
 
@@ -816,8 +827,8 @@
         position: absolute;
         z-index: 0;
         height: 200px;
-        left: 5%;
-        width: 250px;
+        left: -3%;
+        width: clamp(300px, 80%, 500px);
         top:35%;
     }
 
@@ -828,22 +839,24 @@
     #pu-concrete-desc {
         position: absolute;
         font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-        max-width: clamp(600px, 50%, 700px);
+        max-width: clamp(500px, 50%, 600px) !important;
+        
         color: #4E3A02;
         font-family: 'Lucida Sans Unicode', sans-serif;
-        left: 1%;
+        left: 0%;
     }
 
     #PU-concrete-image {
         position: absolute;
-        width: 50%;
+        width: 80%;
         max-width: clamp(800px, 50%, 1000px);
-        height: 150px;
+        height: 250px;
         border-radius: 10px;
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
         margin-top: -3%;
-        right: 35px;
+        right: 8%;
         top: 150px;
+
     }
 
     #what-is-pu-concrete .content-wrapper {
@@ -852,8 +865,61 @@
         /* height: 250px; */
     }
     
+    #pu-vs-epoxy .content-wrapper {
+        position: relative;
+        min-height: 350px; 
+        max-height: 600px;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 20px !important;
+    }
+
+    #pu-vs-epoxy-desc {
+        display: none !important;
+    }
+
+    #pu-desc {
+        display: block !important;
+        text-align: center;
+        font-size: clamp(0.8rem, 2.5vw, 1.1rem);
+        max-width: clamp(280px, 75%, 400px);
+        height: fit-content;
+        margin: 20px auto;
+        order: 1;
+        top: -12%;
+    }
+
+    #epoxy-desc {
+        display: block !important;
+        text-align: center;
+        font-size: clamp(0.8rem, 2.5vw, 1.1rem);
+        max-width: clamp(280px, 75%, 400px);
+        height: fit-content;
+        margin: 20px auto;
+        order: 2;
+    }
 
     #PU-Comparison {
+        display: none;
+    }
+    #Epoxy-Comparison {
+        display:none !important;
+    }
+
+    /* Show mobile comparison image only on mobile */
+    img#pu-vs-epoxy-mobile.section-image {
+        display: block !important;
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        margin: 20px auto;
+        border-radius: 10px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    }
+
+    /* #PU-Comparison {
         position: absolute;
         width: 100%;
         max-width: clamp(450px, 50%, 500px);
@@ -864,9 +930,9 @@
         left: 50%;
         transform: translateX(-50%);
         right: auto;
-    }
+    } */
 
-    #Epoxy-Comparison {
+    /* #Epoxy-Comparison {
         position: relative;
         width: 100%;
         max-width: clamp(450px, 50%, 500px);
@@ -892,7 +958,7 @@
         font-family: 'Lucida Sans Unicode', sans-serif;
         top: 100px;
         left: -3%;
-    }
+    } */
 
     #phthalate-free {
         position: relative;
@@ -1003,14 +1069,27 @@
     }
 
     #PU-Comparison {
-        top:20%;
+        display: none;
     }
     #Epoxy-Comparison {
         display:none !important;
     }
 
+    /* Show mobile comparison image only on mobile */
+    img#pu-vs-epoxy-mobile.section-image {
+        display: block !important;
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        margin: 20px auto;
+        border-radius: 10px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    }
+
 
 }
+
 
 
 
