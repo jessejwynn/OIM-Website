@@ -488,6 +488,16 @@ img#pu-vs-epoxy-mobile.section-image {
     display: none !important;
 }
 
+#vebro-is.glass-card {
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(244, 241, 241, 0);
+        backdrop-filter: blur(2.2px);
+        -webkit-backdrop-filter: blur(2.2px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+
+}
+
 
 /* DIFFERENT SCREEN SIZES */
 @media (min-width: 1200px) {
@@ -602,7 +612,7 @@ img#pu-vs-epoxy-mobile.section-image {
         min-width: 50px;
         margin: 0 auto;
         width: 20%;
-        top: -320px;
+        top: -280px;
         left: -20%;
     }
 
@@ -615,6 +625,87 @@ img#pu-vs-epoxy-mobile.section-image {
         z-index: 0;
         left: 5%;
     }
+
+    #vebro-vs-others-points {
+        position:absolute;
+        left: 5%;
+    }
+
+
+    #vebro-is {
+        position:absolute;
+        top: 1%;
+        left: 0%;
+        width: auto;
+        text-align: center;
+        padding:10px;
+    }
+
+    #red-list-image {
+        width: 100%;
+        max-width: clamp(200px, 50%, 300px);
+        height: auto;
+        left: 13%;
+        top: 22%;
+        z-index: 11;;
+    }
+
+    #red-list-desc.glass-card {
+        background: rgba(255, 60, 60, 0.105);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(244, 241, 241, 0);
+        backdrop-filter: blur(2.2px);
+        -webkit-backdrop-filter: blur(2.2px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        z-index: 10;
+    }
+
+    #red-list-desc {
+        position:absolute;
+        top: 34%;
+        left: 27%;
+        width: auto;
+        max-width: clamp(400px, 50%, 500px);
+        text-align: center;
+    }
+
+    #vebro-points {
+        text-align: center;
+        min-width: 100px;
+        max-width: 200px;
+        top:30%;
+        right:10%;
+        z-index: 11;
+    }
+
+    #vebro-points h1 {
+        font-size: clamp(1.3rem, 5vw, 1.6rem);
+        font-weight: bold;
+        letter-spacing: 5px;
+    }
+
+    #vebro-points h3 {
+        font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+        font-weight: 200;
+    }
+    
+    #antimicrobials-desc {
+        position: absolute;
+        bottom: 9%;
+        left: 15%;
+        max-width: clamp(400px, 50%, 500px);
+        color: #4E3A02;
+        font-family: 'Lucida Sans Unicode', sans-serif;
+        
+    }
+
+    #antimicrobials-desc p{
+        font-size: clamp(0.5rem, 2.5vw, 0.9rem);
+    }
+
+
+
+    
 
 
 }
@@ -742,7 +833,7 @@ img#pu-vs-epoxy-mobile.section-image {
         min-width: 210px;
         margin: 0 auto;
         width: 20%;
-        top: -320px;
+        top: -280px;
         left: -25%;
     }
 
@@ -755,6 +846,8 @@ img#pu-vs-epoxy-mobile.section-image {
         z-index: 0;
         left: 5%;
     }
+
+    
 }
 
 @media (max-width: 991px) {
