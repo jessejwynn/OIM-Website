@@ -363,6 +363,10 @@
         height: 100px;
     }
     
+    .product-card {
+        padding: 20px;
+    }
+    
     .product-card h3 {
         font-size: clamp(1rem, 2.5vw, 1.1rem);
     }
@@ -373,9 +377,27 @@
 }
 
 @media (max-width: 480px) {
-    .products-grid {
-        grid-template-columns: 1fr;
-        max-width: 300px;
+   .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+        max-width: 500px;
+        gap: 15px;
+    }
+    
+    .product-image {
+        height: 100px;
+    }
+    
+    .product-card {
+        padding: 15px;
+    }
+    
+    .product-card h3 {
+        font-size: clamp(1rem, 2.5vw, 1.1rem);
+    }
+    
+    .product-card p {
+        font-size: 0.8rem;
     }
 }
 
@@ -669,22 +691,22 @@ img#pu-vs-epoxy-mobile.section-image {
         text-align: center;
     }
 
-    #vebro-points {
+    #vebro-benefits {
         text-align: center;
         min-width: 100px;
         max-width: 200px;
-        top:30%;
+        top:25%;
         right:10%;
         z-index: 11;
     }
 
-    #vebro-points h1 {
+    #vebro-benefits h1 {
         font-size: clamp(1.3rem, 5vw, 1.6rem);
         font-weight: bold;
         letter-spacing: 5px;
     }
 
-    #vebro-points h3 {
+    #vebro-benefits h3 {
         font-size: clamp(1.2rem, 2.5vw, 1.5rem);
         font-weight: 200;
     }
@@ -693,14 +715,14 @@ img#pu-vs-epoxy-mobile.section-image {
         position: absolute;
         bottom: 9%;
         left: 15%;
-        max-width: clamp(400px, 50%, 500px);
+        max-width: clamp(400px, 50%, 550px);
         color: #4E3A02;
         font-family: 'Lucida Sans Unicode', sans-serif;
         
     }
 
     #antimicrobials-desc p{
-        font-size: clamp(0.5rem, 2.5vw, 0.9rem);
+        font-size: clamp(0.4rem, 2.5vw, 0.8rem);
     }
 
 
@@ -847,6 +869,94 @@ img#pu-vs-epoxy-mobile.section-image {
         left: 5%;
     }
 
+    #vebro-vs-others .glass-card {
+        position: absolute;
+        /* inset: auto 24px -24px auto; */
+    }
+
+    #vebro-vs-others-image {
+        z-index: 0;
+        left: 5%;
+    }
+
+    #vebro-vs-others-points {
+        position:absolute;
+        left: 5%;
+    }
+
+
+    #vebro-is {
+        position:absolute;
+        top: -2%;
+        left: -7%;
+        width: auto;
+        text-align: center;
+        padding:10px;
+    }
+
+    #red-list-image {
+        width: 100%;
+        max-width: clamp(100px, 50%, 250px);
+        height: auto;
+        left: 10%;
+        top: -2%;
+        z-index: 11;;
+    }
+
+    #red-list-desc.glass-card {
+        background: rgba(255, 60, 60, 0.105);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(244, 241, 241, 0);
+        backdrop-filter: blur(2.2px);
+        -webkit-backdrop-filter: blur(2.2px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        z-index: 10;
+    }
+
+    #red-list-desc {
+        position:absolute;
+        top: 34%;
+        left: 22%;
+        width: auto;
+        max-width: clamp(400px, 50%, 500px);
+        text-align: center;
+    }
+
+    #vebro-benefits {
+        text-align: center;
+        min-width: 100px;
+        max-width: 130px;
+        top:30%;
+        right:4%;
+        z-index: 11;
+    }
+
+    #vebro-benefits h1 {
+        font-size: clamp(1rem, 5vw, 1.1rem);
+        font-weight: bold;
+        letter-spacing: 5px;
+    }
+
+    #vebro-benefits h3 {
+        font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+        font-weight: 200;
+    }
+    
+    #antimicrobials-desc {
+        position: absolute;
+        bottom: 10%;
+        left: 15%;
+        max-width: 500px;
+        max-height: 100px;
+        color: #4E3A02;
+        font-family: 'Lucida Sans Unicode', sans-serif;
+        
+    }
+
+    #antimicrobials-desc p{
+        font-size: clamp(0.4rem, 2.5vw, 0.8rem);
+    }
+
     
 }
 
@@ -905,6 +1015,100 @@ img#pu-vs-epoxy-mobile.section-image {
 
     #phthalates-effects-image {
         top: 43%;
+    }
+
+    #vebro-vs-others .content-wrapper {
+        min-height: 500px;
+        max-height: auto;
+    }
+
+     #vebro-vs-others .glass-card {
+        position: absolute;
+        /* inset: auto 24px -24px auto; */
+    }
+
+    #vebro-vs-others-image {
+        z-index: 0;
+        left: 5%;
+    }
+
+    #vebro-vs-others .glass-card {
+        position: absolute;
+        /* inset: auto 24px -24px auto; */
+    }
+
+    #vebro-vs-others-image {
+        z-index: 0;
+        left: 5%;
+    }
+
+    #vebro-vs-others-points {
+        position:absolute;
+        left: 5%;
+    }
+
+
+    #vebro-is {
+        position:absolute;
+        top: -4%;
+        left: -12%;
+        width: auto;
+        text-align: center;
+        padding:10px;
+    }
+
+    #red-list-image {
+        width: 100%;
+        max-width: clamp(50px, 50%, 200px);
+        height: auto;
+        left: 0%;
+        top: -2%;
+        z-index: 11;;
+    }
+
+    #red-list-desc {
+        position:absolute;
+        top: 34%;
+        left: 12%;
+        width: auto;
+        max-width: clamp(400px, 50%, 500px);
+        text-align: center;
+    }
+
+    #vebro-benefits {
+        text-align: center;
+        min-width: 100px;
+        max-width: 130px;
+        top:30%;
+        right:4%;
+        z-index: 11;
+    }
+
+    #vebro-benefits h1 {
+        font-size: clamp(1rem, 5vw, 1.1rem);
+        font-weight: bold;
+        letter-spacing: 5px;
+    }
+
+    #vebro-benefits h3 {
+        font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+        font-weight: 200;
+    }
+    
+    #antimicrobials-desc {
+        position: absolute;
+        bottom: 10%;
+        left: 15%;
+        width: 1000px;
+        min-height: auto;
+        max-height: 200px;
+        color: #4E3A02;
+        font-family: 'Lucida Sans Unicode', sans-serif;
+        
+    }
+
+    #antimicrobials-desc p{
+        font-size: clamp(0.4rem, 2.5vw, 0.8rem);
     }
 }
 
@@ -1111,6 +1315,21 @@ img#pu-vs-epoxy-mobile.section-image {
         display: none;
     }
 
+    #vebro-vs-others .content-wrapper {
+        min-height: 550px;
+        max-height: auto;
+    }
+
+     #vebro-vs-others .glass-card {
+        position: absolute;
+        /* inset: auto 24px -24px auto; */
+    }
+
+    #vebro-vs-others-image {
+        z-index: 0;
+        left: 5%;
+    }
+
     #vebro-vs-others .glass-card {
         position: absolute;
         /* inset: auto 24px -24px auto; */
@@ -1121,6 +1340,83 @@ img#pu-vs-epoxy-mobile.section-image {
         left: 5%;
     }
 
+    #vebro-vs-others-points {
+        position:absolute;
+        left: 5%;
+    }
+
+
+    #vebro-is {
+        position:absolute;
+        top: -7%;
+        left: -30%;
+        width: auto;
+        text-align: center;
+        padding:10px;
+    }
+
+    #red-list-image {
+        width: 100%;
+        max-height: clamp(80px, 50%, 120px);
+        max-width: clamp(80px, 50%, 120px);
+        height: auto;
+        left: -45%;
+        top: 0%;
+        z-index: 11;;
+    }
+
+    #red-list-desc {
+        position: absolute;
+        top: 30%;
+        left: 5%;
+        right: 160px; /* Leave space for vebro-benefits */
+        width: auto !important;
+        max-width: clamp(200px, 60%, 400px);
+        max-height: 380px;
+        text-align: center;
+        padding-right: 20px; /* Extra padding to ensure no overlap */
+    }
+
+    #vebro-benefits {
+        position: absolute !important;
+        text-align: center;
+        max-width: 150px !important;
+        min-width: 50px !important;
+        top: 20%;   
+        right: 4%;
+        z-index: 11;
+    }
+
+    #vebro-benefits h1 {
+        font-size: clamp(1rem, 5vw, 1.1rem);
+        font-weight: bold;
+        letter-spacing: 5px;
+    }
+
+    #vebro-benefits h3 {
+        font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+        font-weight: 200;
+    }
+    
+    #antimicrobials-desc {
+        position: absolute;
+        bottom: 15%;
+        left: 5%;
+        right: 160px;
+        max-width: 500px !important;
+        min-height: auto;
+        max-height: 200px;
+        color: #4E3A02;
+        font-family: 'Lucida Sans Unicode', sans-serif;
+        
+    }
+
+    #antimicrobials-desc p{
+        font-size: clamp(0.4rem, 2.5vw, 0.8rem);
+    }
+
+
+    
 
 
 }
@@ -1164,7 +1460,7 @@ img#pu-vs-epoxy-mobile.section-image {
 
     #pu-vs-epoxy .content-wrapper {
         position: relative;
-        min-height: 200px; 
+        min-height: 250px; 
         max-height: 300px;
         display: flex !important;
         flex-direction: column !important;
@@ -1243,8 +1539,112 @@ img#pu-vs-epoxy-mobile.section-image {
         margin-top: -140px;
 
     } 
+    #vebro-vs-others .content-wrapper {
+        min-height: 350px;
+        max-height: 430px;
+    }
+
+     #vebro-vs-others .glass-card {
+        position: absolute;
+        /* inset: auto 24px -24px auto; */
+    }
+    #red-list-desc {
+        top:28%;
+        left: 10%;
+    }
+
+    #red-list-desc p {
+        font-size: clamp(0.7rem, 2.5vw, 1.3rem);
+        padding-bottom: 0px;
+    }
+
+    #red-list-image {
+        top:-8%;
+    }
+
+    #vebro-is {
+        display: none;
+    }
+    #vebro-benefits {
+        position: absolute !important;
+        text-align: center;
+        max-width: 150px !important;
+        min-width: 50px !important;
+        top: 25%;   
+        right: 4%;
+        z-index: 11;
+        
+    }
+
+
+    #antimicrobials-desc {
+        position: absolute;
+        bottom: 10%;
+        left: 5%;
+        right: 160px;
+        max-width: 500px !important;
+        min-height: auto;
+        max-height: 200px;
+        color: #4E3A02;
+        font-family: 'Lucida Sans Unicode', sans-serif;
+        padding: 15px;
+    }
+     #antimicrobials-desc p{
+        font-size: clamp(0.2rem, 2.5vw, 0.7rem);
+    }
 
 } 
+
+@media (max-width: 400px) {
+    #red-list-desc {
+        max-height: 400px;
+        max-width: 500px;
+        padding: 20px;
+        top: 28%;
+        right:5%;
+    }
+    #red-list-desc h3 {
+        font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+    }
+    #red-list-desc p {
+        font-size: clamp(0.7rem, 2.5vw, 1.3rem);
+        
+    }
+    #red-list-image {
+        top: -5%;
+    }
+
+    #vebro-vs-others .content-wrapper {
+        min-height: auto;
+        max-height: 400px;
+    }
+
+    
+    #vebro-benefits {
+        padding:10px;
+        top:50%;
+    }
+
+   #antimicrobials-desc {
+        position: absolute;
+        bottom: 20%;
+        left: 5%;
+        right: 160px;
+        max-width: 200px !important;
+        min-height: auto;
+        max-height: auto;
+        color: #4E3A02;
+        font-family: 'Lucida Sans Unicode', sans-serif;
+        
+    }
+
+    #antimicrobials-desc p{
+        font-size: clamp(0.6em, 2.5vw, 0.8rem);
+    }
+    #epoxy-desc {
+        top: 40%;
+    }
+}
 
  
 
