@@ -47,6 +47,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 toggleHeroMenu();
             }
         });
+
+        // Close hero menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (heroMenuOverlay.classList.contains('active')) {
+                // Check if click is outside the hero menu toggle and menu content
+                if (!heroMenuToggle.contains(e.target) && !heroMenuOverlay.querySelector('.menu-content').contains(e.target)) {
+                    closeHeroMenu();
+                }
+            }
+        });
     }
 
     // Floating menu event listeners
@@ -60,6 +70,16 @@ document.addEventListener('DOMContentLoaded', function() {
         floatingMenuOverlay.addEventListener('click', function(e) {
             if (e.target === floatingMenuOverlay) {
                 toggleFloatingMenu();
+            }
+        });
+
+        // Close floating menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (floatingMenuOverlay.classList.contains('active')) {
+                // Check if click is outside the floating navbar and menu content
+                if (!floatingNavbar.contains(e.target) && !floatingMenuOverlay.querySelector('.menu-content').contains(e.target)) {
+                    closeFloatingMenu();
+                }
             }
         });
     }
