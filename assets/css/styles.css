@@ -621,8 +621,10 @@ body {
     
     #what-we-do {
       position: relative;
-      padding-bottom: 0; /* Remove bottom padding */
+      padding-bottom: 0px; /* Add some bottom padding for spacing */
       margin-bottom: 0; /* Remove bottom margin */
+      min-height: 500px; /* Set a minimum height to contain all elements */
+      overflow: hidden; /* Prevent overflow into next section */
     }
 
     #what-we-do h2 {
@@ -681,7 +683,8 @@ body {
     #why-us-section {
       position: absolute;
       max-width: 550px;
-      min-height: 450px;
+      min-height: auto; /* Allow flexible height */
+      height: auto; /* Allow content to determine height */
       right: 30px;
       top: 180px; 
       background: rgba(255, 255, 255, 0.325);
@@ -690,14 +693,16 @@ body {
       backdrop-filter: blur(4.6px);
       -webkit-backdrop-filter: blur(4.6px);
       border: 3px solid rgba(0, 0, 0, 0.033);
-      padding: 30px;
+      padding: 25px;
       margin-right: 30px;
+      overflow: visible; /* Allow content to be fully visible */
+    
     }
 
     #why-us-title {
       position: relative;
       font-family: 'Lucida Sans Unicode', serif;
-      font-size: clamp(3rem, 2.5vw, 4rem);
+      font-size: clamp(2.5rem, 2.5vw, 3.5rem); /* Slightly smaller font size */
       font-weight: lighter;
       margin: 0;
       color: #4e3a02a6;
@@ -709,17 +714,17 @@ body {
 
     #why-us-points {
       position: relative;
-      margin-top: 30px;
+      margin-top: 20px; /* Reduce top margin */
       margin-left: 50px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px; /* Reduce gap between items */
     
     }
     #why-us-section h4 {
       position: relative;
       font-family: 'Lucida Sans Unicode', sans-serif;
-      font-size: clamp(1.7rem, 2.5vw, 2.3rem);
+      font-size: clamp(1.2rem, 2vw, 1.6rem); /* Smaller font size for large screens */
       font-weight: lighter;
       margin: 0;
       margin-top: 0px;
@@ -727,24 +732,25 @@ body {
       left: 0px;
       top: 0px;
       text-shadow: 1px 1px #615c5044;
-      padding-bottom: 15px;
+      padding-bottom: 10px; /* Reduce padding */
       border-bottom: 2px solid #5c4e2ac0;
-      width: 450px;
+      width: 90%; /* Make line proportional to card width */
     }
 
     #why-us-section h5 {
       position: relative;
       font-family: 'Lucida Sans Unicode', sans-serif;
-      font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+      font-size: clamp(0.9rem, 2vw, 1.2rem); /* Smaller font size for large screens */
       font-weight: 100;
       margin: 0;
-      margin-top: 10px;
+      margin-top: 8px; /* Reduce margin */
       color: #4e3a02b1;
       left: 0px;
       top: 0;
       /* text-shadow: 2px 2px #615c5044; */
-      width: 450px;
-      margin-bottom: 10px;
+      width: 90%; /* Make description width proportional to card */
+      margin-bottom: 8px; /* Reduce bottom margin */
+      line-height: 1.4; /* Better line spacing for smaller text */
       /* margin-bottom: -250px; */
     }
 
@@ -2584,13 +2590,13 @@ body {
       }
       
       #why-us-section h4 {
-        width: 400px;
-        font-size: clamp(1.5rem, 2.8vw, 2rem);
+        width: 90%;
+        font-size: clamp(1.3rem, 2.3vw, 1.7rem);
       }
       
       #why-us-section h5 {
-        width: 400px;
-        font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+        width: 90%;
+        font-size: clamp(1rem, 1.8vw, 1.3rem);
       }
     }
     
