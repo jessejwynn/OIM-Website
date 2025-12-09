@@ -672,6 +672,7 @@ body {
       height: 350px;
       border-radius: 15px;
       object-fit: cover;
+      object-position: center 70%; /* Show more of the bottom (machinery) */
       left: clamp(50px, 30vw, 220px); /* Position from right */
       top: 320px; /* Center vertically */
       transform: translateY(-50%); /* Center vertically */
