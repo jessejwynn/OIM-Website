@@ -577,7 +577,7 @@ img#pu-vs-epoxy-mobile.section-image {
         height: 250px;
         border-radius: 10px;
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-        margin-top: -8%;
+        margin-top: -90px;
         left: 5%;
     }
     #Epoxy-Comparison {
@@ -957,6 +957,15 @@ img#pu-vs-epoxy-mobile.section-image {
         font-size: clamp(0.4rem, 2.5vw, 0.8rem);
     }
 
+    #certifications {
+        margin-top: -75px;
+        margin-bottom: -75px;
+        justify-content: center;
+        margin-right: 0px;
+
+    }
+
+    
     
 }
 
@@ -1770,4 +1779,15 @@ img#pu-vs-epoxy-mobile.section-image {
     #calc-root table {
         font-size: 12px !important;
     }
+}
+
+/* Hover animation for certification glass cards */
+#certified-distributor .glass-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+#certified-distributor .glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    background-color: rgba(247, 245, 236, 0.9);
 }
